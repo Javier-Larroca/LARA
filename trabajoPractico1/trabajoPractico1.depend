@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1598838600 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+
+1598837588 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
+
+1598838475 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+
+1598569139 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\estructura.h
+
