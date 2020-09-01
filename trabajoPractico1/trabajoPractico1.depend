@@ -30,3 +30,46 @@
 
 1598569139 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\estructura.h
 
+1598927834 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+
+1598842467 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.h
+
+1598842467 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\main.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+
+1598925005 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.cpp
+	<iostream>
+	"fecha.h"
+
+1598924979 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.h
+
+1598928781 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
+	<iostream>
+	"usuario.h"
+
+1598927802 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
+	"fecha.h"
+

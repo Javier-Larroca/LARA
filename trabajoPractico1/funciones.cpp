@@ -10,11 +10,15 @@
 #include <stdio.h>
 using namespace std;
 #include "funciones.h"
+#include "usuario.h"
 
 void validaOpcion(char o[], bool *f){
 int opcion=atoi(o); //Aca paso la cadena a numeros
         switch (opcion){
-        case 1:
+        case 1:{
+            mostrar_usuario(cargar_usuario());
+            system("pause");
+        }
             break;
         case 2:
             break;

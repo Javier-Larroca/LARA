@@ -33,9 +33,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="estructura.h" />
+		<Unit filename="fecha.cpp" />
+		<Unit filename="fecha.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="usuario.cpp" />
+		<Unit filename="usuario.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
