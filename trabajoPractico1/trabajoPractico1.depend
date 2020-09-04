@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1599028545 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
+1599236887 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -10,12 +10,13 @@
 	<string>
 	<windows.h>
 	<stdio.h>
+	<iomanip>
 	"funciones.h"
 	"usuario.h"
 
-1599015546 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
+1599190273 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
 
-1598838475 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
+1599236819 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -88,17 +89,18 @@
 1599101113 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
 	"fecha.h"
 
-1599025196 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
+1599178322 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
 	<iostream>
 	"fecha.h"
 	"usuario.h"
+	<ctime>
 
-1599028173 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.h
+1599178322 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.h
 
-1599031549 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.h
+1599236842 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.h
 	"fecha.h"
 
-1599032728 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
+1599236856 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>

@@ -8,6 +8,7 @@
 #include <string>
 #include <windows.h>
 #include <stdio.h>
+#include <iomanip>
 using namespace std;
 #include "funciones.h"
 #include "usuario.h"
@@ -68,10 +69,12 @@ while(!volver){
         }
             break;
         case 2:
+            modificarUsuario();
             break;
         case 3:
             break;
-        case 4:listar_usuarios();
+        case 4:
+            listar_usuarios();
             break;
         case 5:
             break;
@@ -112,7 +115,8 @@ while(!volver){
             opcionSetearTodo(opcion);
         }
             break;
-        case 2:volver=true;
+        case 2:
+            volver=true;
             break;
         case 3:
             break;
@@ -143,5 +147,10 @@ cout << "Datos eliminados con exitos" << endl;
     cout << "Se cancela seteo de información" << endl;
     system("pause");
     }
+
+}
+
+void modificarUsuario(){
+int i;
 
 }
