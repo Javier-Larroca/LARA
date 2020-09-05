@@ -16,6 +16,10 @@ Fecha validar_fecha(Fecha reg)
     actual.dia =today.tm_mday;
     actual.anio =(today.tm_year+1900);
 
+    //Verificamos que el año ingresado sea correcto.
+    if (reg.anio<1900){
+        band= false;
+    }
 
     //Validacion de que el tipo de fecha ingresado sea correcto.
     if ( reg.mes >= 1 && reg.mes <= 12 )
@@ -58,7 +62,7 @@ Fecha validar_fecha(Fecha reg)
         band=false;
     }
     //Finalizacion de validacion de fecha correcta.
-    cout << actual.dia << "/" << actual.mes << "/" << actual.anio << endl;
+    //cout << actual.dia << "/" << actual.mes << "/" << actual.anio << endl;
 
     //Validacion de que la fecha no sea del futuro.
     if (reg.anio>actual.anio){
@@ -90,6 +94,39 @@ Fecha validar_fecha(Fecha reg)
     }
 }
 
+int edad(Fecha reg){
+    Fecha actual;
+    int edadUsuario;
+
+    //Obtencion de fecha actual y guardado en un Struct de Fecha.
+    time_t t = time( NULL );
+    struct tm today = *localtime( &t );
+    actual.mes =today.tm_mon + 1;
+    actual.dia =today.tm_mday;
+    actual.anio =(today.tm_year+1900);
+
+    edadUsuario=actual.anio-reg.anio; //Calculo edad aprox.
+
+    //Verifico que el usuario ya haya o no cumplido años este año
+    if (actual.mes>reg.mes){
+        return edadUsuario;
+    }
+    else{
+        if (actual.mes<reg.mes){
+            return edadUsuario-1;
+        }
+        else{
+            if (actual.dia>=reg.dia){
+                return edadUsuario;
+            }
+            else{
+                return edadUsuario-1;
+            }
+        }
+    }
+
+}
+
 Fecha cargar_fecha(){ //Carga una fecha.
     Fecha reg;
     cout << "Día: ";
@@ -98,9 +135,12 @@ Fecha cargar_fecha(){ //Carga una fecha.
     cin >> reg.mes;
     cout << "Año: ";
     cin >> reg.anio;
-    return validar_fecha(reg);
+    reg = validar_fecha(reg);
+    if (edad(reg)<=13){
+        cout<<"La edad del usuario no es permitida"<<endl;
+    }
+    return reg;
 
-    //return reg;
 }
 
 void mostrar_fecha(Fecha reg){ //Muestra fecha de nacimiento

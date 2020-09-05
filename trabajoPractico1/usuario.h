@@ -29,6 +29,13 @@ bool guardar_usuario(Usuario); //Guarda usuarios, se llama a esta función al fin
 void encabezadoTablaUsuarios(); //Encabezado para mostrar usuarios en forma de tabla. No terminado
 void mostrarDatosUsuarios(Usuario r); //Mostrar datos para los encabezados en forma de tabla. No terminado
 
+///////////////////////////////////////////////////////////////////
+bool guardar_usuario(Usuario, int);
+int cantidadUsuarios();
+int buscarUsuario(int);
+Usuario leer_usuario(int);
+void listar_usuarios_x_id();
+bool modificar_usuario();
 
 #endif // USUARIO_H_INCLUDED
 

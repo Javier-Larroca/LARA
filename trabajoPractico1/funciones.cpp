@@ -42,53 +42,62 @@ int opcion=atoi(o); //Aca paso la cadena a numeros
 
 //Submenu Usuarios
 void menuUsuarios(){
-bool volver=false;
-char opcion[1];
-int opcionElegida;
-while(!volver){
-        system("cls");
-        cout <<endl;
-        cout << "           USUARIOS         "<< endl;
-        cout << "-----------------------------------------------"<< endl;
-        cout <<endl;
-        cout <<"  1. Nuevo usuario"<< endl;
-        cout <<"  2. Modificar Usuario"<< endl;
-        cout <<"  3. Listar usuario por ID"<< endl;
-        cout <<"  4. Listar todos los usuarios"<< endl;
-        cout <<"  5. Eliminar usuario" << endl;
-        cout <<"  6. Volver al menú principal" << endl;
-        cout <<endl;
-        cout <<"Seleccione una opción: ";
-        cin >> opcion;
-        opcionElegida=atoi(opcion);
-        system("cls");
-            switch (opcionElegida){
-        case 1:{
-            mostrar_usuario(cargar_usuario());
-            system("pause");
-        }
-            break;
-        case 2:
-            modificarUsuario();
-            break;
-        case 3:
-            break;
-        case 4:
-            listar_usuarios();
-            break;
-        case 5:
-            break;
-        case 6:volver=true;
-            break;
-        default:
-            cout <<"-----------------------------------------------------------------------------------"<< endl;
-            cout <<"         La opción ingresada no es correcta. Porfavor ingrese una opción válida    "<< endl;
-            cout <<"-----------------------------------------------------------------------------------"<< endl;
-            system("pause");
-            break;
-        }
+    bool volver=false;
+    char opcion[1];
+    int opcionElegida;
+    while(!volver){
+            system("cls");
+            cout <<endl;
+            cout << "           USUARIOS         "<< endl;
+            cout << "-----------------------------------------------"<< endl;
+            cout <<endl;
+            cout <<"  1. Nuevo usuario"<< endl;
+            cout <<"  2. Modificar Usuario"<< endl;
+            cout <<"  3. Listar usuario por ID"<< endl;
+            cout <<"  4. Listar todos los usuarios"<< endl;
+            cout <<"  5. Eliminar usuario" << endl;
+            cout <<"  6. Volver al menú principal" << endl;
+            cout <<endl;
+            cout <<"Seleccione una opción: ";
+            cin >> opcion;
+            opcionElegida=atoi(opcion);
+            system("cls");
+                switch (opcionElegida){
+            case 1:{
+                Usuario reg; //Creo un registro
+                reg= cargar_usuario(); //Cargo un registro con datos de usuario nuevo
+                if (guardar_usuario(reg)){
+                    cout<<endl<<"¡El usuario fue registrado exitosamente!"<<endl<<endl;
+                    mostrar_usuario(reg);
+                }
+                else{
+                    cout<<endl<<"¡El usuario no pudo ser registrado!"<<endl<<endl;
+                }
+                system("pause");
+            }
+                break;
+            case 2:
+                modificar_usuario();
+                break;
+            case 3:
+                listar_usuarios_x_id();
+                system("pause");
+                break;
+            case 4:
+                listar_usuarios();
+                break;
+            case 5:
+                break;
+            case 6:volver=true;
+                break;
+            default:
+                cout <<"-----------------------------------------------------------------------------------"<< endl;
+                cout <<"         La opción ingresada no es correcta. Porfavor ingrese una opción válida    "<< endl;
+                cout <<"-----------------------------------------------------------------------------------"<< endl;
+                system("pause");
+                break;
+            }
     }
-
 }
 
 //Submenu Configuracion. Le agregué la funcion de setear la informacion.
