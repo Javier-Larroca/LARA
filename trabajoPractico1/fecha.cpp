@@ -138,6 +138,7 @@ Fecha cargar_fecha(){ //Carga una fecha.
     reg = validar_fecha(reg);
     if (edad(reg)<=13){
         cout<<"La edad del usuario no es permitida"<<endl;
+        reg.dia=0; //Se me ocurrio que si la edad es menor que 13, lo setea a 0. Usarlo como bandera digamos, tal vez puede funcionar.
     }
     return reg;
 

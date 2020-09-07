@@ -15,20 +15,19 @@ struct Usuario{
     bool estado;
 };
 
-//Direccion donde vamos a guardar todos los usuarios.
-const char archivoUsuarios[50]="datos/usuarios.dat";
-
 
 //Funciones para Usuario
 
 Usuario cargar_usuario(); //Carga un usuario
 void mostrar_usuario(Usuario); //Muestra atributos de usuario cargado
-int buscar_usuario(int); //
 void listar_usuarios(); //Lista usuarios
 bool guardar_usuario(Usuario); //Guarda usuarios, se llama a esta función al final de cargar_usuario
-void encabezadoTablaUsuarios(); //Encabezado para mostrar usuarios en forma de tabla. No terminado
-void mostrarDatosUsuarios(Usuario r); //Mostrar datos para los encabezados en forma de tabla. No terminado
-
+void encabezadoTablaUsuarios(); //Encabezado para mostrar usuarios en forma de tabla.
+void mostrarDatosUsuarios(Usuario r); //Mostrar datos para los encabezados en forma de tabla.
+bool modificar_atributo(int o, Usuario *r, bool *m); //Modifica atributo. Le paso la opcion elegida, la direccion del usuario y un booleano para validar si modifico algun atributo
+void eliminar_usuario();
+void valida_espacios(char *n);
+int validar_id(int p);
 ///////////////////////////////////////////////////////////////////
 bool guardar_usuario(Usuario, int);
 int cantidadUsuarios();

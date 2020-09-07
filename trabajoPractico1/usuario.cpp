@@ -13,8 +13,19 @@
 #include <iomanip>
 using namespace std;
 #include "usuario.h"
+#include "funciones.h"
+
+#define TECLA_ARRIBA 72
+#define TECLA_ABAJO 80
+#define TECLA_ENTER 13
+
+
+//Direccion donde vamos a guardar todos los usuarios.
+const char *archivoUsuarios= "datos/usuarios.dat";
+
 
 void mostrar_usuario(Usuario reg){
+    char mayuscula = toupper(reg.perfilActividad); //Le agrego esta variable para que pueda mostrar el caracter en mayuscula
     cout << "ID         : " << reg.id << endl;
     cout << "Nombres    : " << reg.nombres<< endl;
     cout << "Apellidos  : " << reg.apellidos << endl;
@@ -22,7 +33,7 @@ void mostrar_usuario(Usuario reg){
     mostrar_fecha(reg.nac);
     cout << "Altura     : " << reg.altura << " cms"<< endl;
     cout << "Peso       : " << reg.peso << " kgs"<< endl;
-    cout << "Perfil     : " << reg.perfilActividad << endl;
+    cout << "Perfil     : " << mayuscula << endl;
     cout << "Apto medico: " << reg.aptoMedico << endl;
 }
 
@@ -48,21 +59,30 @@ int buscar_usuario(int id_buscado){
 
 */
 Usuario cargar_usuario(){ //Cargamos usuario
+    bool cancelarCarga=false;
+    //while (!cancelarCarga)
     Usuario a, *aux;
     aux = &a;
-
-    int id, pos, apto;
+    char auxiliares[50]; //Creo esta cadena de forma auxiliar para validar espacios
+    int id, apto;
     cout << "ID   : ";
-    cin >> id;
-            ///Falta validacion de que el id no este repetido.
-    aux->id = id;
+    cin >> id;   ///Falta validacion de que el id no este repetido.
+    aux->id = validar_id(id); //Creo que funciona bien.
     cout << "Nombres  : ";
     cin.ignore();
-    cin.getline(aux->nombres, 50); ///Falta quitar espacios en nombre
+    cin.getline(auxiliares, 50); ///Falta quitar espacios en nombre
+    valida_espacios(auxiliares);
+    strcpy(aux->nombres,auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Apellidos: ";
-    cin.getline(aux->apellidos, 50);   ///Falta quitar espacios en apellido
+    cin.getline(auxiliares, 50);   ///Falta quitar espacios en apellido
+    valida_espacios(auxiliares);
+    strcpy(aux->apellidos, auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Ingrese fecha de nacimiento " << endl;
     aux->nac=cargar_fecha(); //Llamo a la función cargar fecha
+    if (aux->nac.dia == 0){ //En fecha.cpp lo comento también, se me ocurrio usar el dia como bandera para cortar la carga si es menor.
+    cout << "\nSe cancela carga de usuario por no cumplir con la edad minima...\n";
+    return a;
+    }
     cout << "Fecha ingresada: "; ///Habria que ver la forma de cortar aca la carga del usuario si es menor de 13 años
     mostrar_fecha(aux->nac);
     /*cout << "Fecha de nacimiento: "; //Lo dejo por las dudas, despues decidimos que funciones usar sino
@@ -74,7 +94,6 @@ Usuario cargar_usuario(){ //Cargamos usuario
     cin >> aux->altura;
     cout << "Peso: ";
     cin >> aux->peso;
-
     cout << "Perfil actividad   : ";
     cin >> aux->perfilActividad;
     /// "toupper" convierte un caracter de minuscula a mayuscula.
@@ -89,8 +108,6 @@ Usuario cargar_usuario(){ //Cargamos usuario
         cin >> apto;
     }
     aux->aptoMedico = apto;
-    //No se si esta bien esta asignacion
-    /// Para mi si
 
     aux->estado = true;
     //guardar_usuario(a); // Termina de cargar el usuario y valida que se guarde.Creo que es un buen lugar para poner el mensaje, decime que te parece despues.
@@ -282,35 +299,188 @@ bool modificar_usuario(){
     //cls();
     //title("MODIFICAR PARTICIPANTE");
     //gotoxy(1, 5);
-    int id, pos;
+    int id, pos, opcion;
+    char opc[10];
+    bool modifico=false, volver=false;
+    cout << "Ingrese ID de usuario a modificar\n";
     cout << "ID: ";
     cin >> id;
+    cin.ignore();
     pos = buscarUsuario(id);
+    Usuario reg = leer_usuario(pos);
     if (pos >= 0){
+        while (!volver){
+        system("cls");
         cout << endl << "Usuario a modificar: " << endl;
         cout << "---------------------------" << endl;
-        Usuario reg = leer_usuario(pos);
         mostrar_usuario(reg);
         cout << endl;
         ///Habria que poner un switch y permitir modificar el peso, el perfil de actividad y el apto médico.
-        cout << "Nuevo nombre: ";
-        cin.ignore();
-        cin.getline(reg.nombres, 50);
-        if (guardar_usuario(reg, pos) == true){
-            //msj("Participante guardado correctamente.", APP_FORECOLOR, APP_OKCOLOR);
-            cout<<"Participante guardado correctamente"<<endl<<endl;
-            return true;
+        //Armo una funcion.
+        cout << "Ingrese el campo que desea modificar: \n";
+        cout << "1. Peso\n";
+        cout << "2. Perfil de actividad\n";
+        cout << "3. Apto medico \n";
+        cout << "4. Volver a menú anterior\n";
+        cout << "Opcion seleccionada: ";
+        cin.getline(opc, 10);
+        opcion = atoi(opc);
+        volver = modificar_atributo(opcion, &reg, &modifico); //Llamo a la función modificar_atributo esperando un bool.
         }
-        else{
-            //msj("El participante no se guardó correctamente.", APP_FORECOLOR, APP_ERRORCOLOR);
-            cout<<"Participante guardado correctamente"<<endl<<endl;
+        if (modifico==true){
+            if (guardar_usuario(reg, pos) == true){
+            //msj("Participante guardado correctamente.", APP_FORECOLOR, APP_OKCOLOR);
+            cout<<"¡Se guardaron todas las modificaciones correctamente!"<<endl;
+            system("pause");
             return true;
-
+            }
+            else{
+            //msj("El participante no se guardó correctamente.", APP_FORECOLOR, APP_ERRORCOLOR);
+            cout<<"¡No se pudo guardar las modificaciones!"<<endl<<endl;
+            return true;
+            }
+        }else{
+        cout << "No se realizaron modificaciones\n";
+        system("pause");
         }
     }
     else{
         //msj("No existe el participante", 15, 3);
-        cout<<"No existe el participante"<<endl<<endl;
+        cout<<"Usuario inexistente"<<endl<<endl;
+        system("pause");
         return false;
     }
+}
+
+//Modifico atributo
+bool modificar_atributo(int o, Usuario *r, bool *m){
+    char aux[10]; //Cadena char para validar la opcion que ingresa. Uso puntero para capturar si tiene espacios
+    long int valor=0;// Le asigno 0 ya que despues le paso el valor de aux
+    switch (o){
+    case 1: //Modificacion de peso. Sin validacion de entrada.
+        cout << "\nIngrese nuevo peso para " << r->nombres << " " << r->apellidos << endl;
+        cout << "Peso: ";
+        cin >> r->peso;
+        while (r->peso <= 0){
+        cout << "Ingrese un peso válido\n";
+        cout << "Peso: ";
+        cin >> r->peso;
+        }
+        cout << "\nPeso modificado\n";
+        *m=true;
+        system("pause");
+        cin.ignore(); //Limpio buffer1
+        break;
+    case 2: //Modificacion perfil de actividad. Valida que no se ingresen otras letras
+        cout << "\nIngrese nuevo perfil de actividad para " << r->nombres << " " << r->apellidos << endl;
+        cout << "Perfil actividad: ";
+        cin.getline(aux, 10);
+        valor = strlen(aux); //Obtengo longitud de la cadena para validar que no ingresen muchos caracteres
+        while ((toupper(aux[0]) != 'A' && toupper(aux[0]) != 'B' && toupper(aux[0]) != 'C') || valor >1){ //Ciclo donde validamos los datos de entrada
+        cout << "\nSolo se admiten perfiles A | B | C\n";
+        cout <<  "Perfil Actividad: " ;
+        cin.getline(aux, 50);
+        valor = strlen(aux);
+        }
+        r->perfilActividad = aux[0];
+        cout << "\nPerfil modificado\n";
+        *m=true;
+        system("pause");
+        return false;
+        break;
+    case 3: //Validacion apto medico. Valida que no se ingrese otros caracteres
+        cout << "\nIngrese nuevo apto medico para " << r->nombres << " " << r->apellidos << endl;
+        cout << "Apto medico: ";
+        cin.getline(aux, 10);
+        valor = strtol(aux, NULL, 36); //Esta funcion me permite obtener un numero especifico de codigo ASCII para validar letras.
+        while (valor != 1 && valor != 0){
+        cout << "Solo se permiten los siguientes valores: 1 | 0\n";
+        cout << "Apto medico: ";
+        cin.getline(aux, 10);
+        valor = strtol (aux, NULL, 36);
+        }
+        r->aptoMedico = valor;
+        cout << "\nApto medico modificado\n";
+        *m=true;
+        system("pause");
+        break;
+    case 4: //Opción para cancelar modificacion
+        return true;
+        break;
+    default:
+        cout << "Opción ingresada no es válida\n";
+                system("pause");
+                system ("cls");
+        break;
+    }
+
+}
+
+//Baja lógica de usuario
+void eliminar_usuario(){
+int id;
+Usuario reg;
+char opc[10];
+long int longitud;
+cout << "Eliminar usuario\n";
+cout << "--------------------------------------\n";
+cout << "Ingrese ID de usuario a eliminar\n";
+cout << "ID: ";
+cin >> id;
+cin.ignore();
+system("cls");
+cout << "USUARIO A ELIMINAR: \n";
+cout <<endl;
+mostrar_usuario(reg=leer_usuario(buscarUsuario(id)));
+cout << "\nAl eliminar el usuario no se podrá crear uno nuevo con el mismo ID\n";
+cout << "\n¿Esta seguro que desea eliminar el usuario: " << reg.nombres << " " <<reg.apellidos << "? S/N : ";
+cin.getline(opc,10);
+longitud = strlen(opc);
+    while ((toupper(opc[0]) != 'S' && toupper(opc[0]) != 'N') || longitud >1){
+      cout << "Opción ingresada no es válida\n";
+      cout << "\n¿Esta seguro que desea eliminar el usuario? S/N: ";
+      cin.getline(opc,10);
+      longitud=strlen(opc);
+    }
+        if(toupper(opc[0])=='S'){
+        system("cls");
+        reg.estado=false;
+            if (guardar_usuario(reg, buscarUsuario(id))== true){
+            gotoxy(10,5);
+            cout << "Se da de baja al usuario: " << reg.nombres << " " << reg.apellidos << endl;
+            cout << "\n";
+            system("pause");
+            }else{
+            gotoxy(10,5);
+            cout << "No se puedo dar de baja al usuario: " << reg.nombres << " " << reg.apellidos << endl;
+            cout << "\n";
+            }
+        }if(toupper(opc[0])=='N'){
+        system("cls");
+        gotoxy(10,5);
+        cout << "Se cancela baja de usuario\n";
+        system("pause");
+        }
+}
+
+//Valida espacios en cadena
+void valida_espacios(char *n){
+long int longitud;
+longitud=strlen(n);
+while (n[0] == ' ' || n[longitud-1] == ' '){
+    cout << "Ingrese valores válidos, no estan permitido espacios al inicio o al final\n";
+    cout << "Nombre: ";
+    cin.getline(n, 50);
+    longitud=strlen(n);
+}
+
+}
+
+int validar_id(int p){
+while (leer_usuario(buscarUsuario(p)).id==p){
+cout<< "\nEl ID ingresado ya fue asignado a otro usuario. Ingrese un nuevo ID: \n";
+cout << "ID: ";
+cin >> p;
+}
+return p;
 }

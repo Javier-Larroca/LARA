@@ -13,6 +13,8 @@ using namespace std;
 #include "funciones.h"
 #include "usuario.h"
 
+
+
 void validaOpcion(char o[], bool *f){
 int opcion=atoi(o); //Aca paso la cadena a numeros
         switch (opcion){
@@ -64,14 +66,16 @@ void menuUsuarios(){
             system("cls");
                 switch (opcionElegida){
             case 1:{
-                Usuario reg; //Creo un registro
-                reg= cargar_usuario(); //Cargo un registro con datos de usuario nuevo
-                if (guardar_usuario(reg)){
+                Usuario reg; ///Creo un registro
+                reg= cargar_usuario(); ///Cargo un registro con datos de usuario nuevo
+                if (reg.nac.dia > 0){
+                    if (guardar_usuario(reg)){
                     cout<<endl<<"¡El usuario fue registrado exitosamente!"<<endl<<endl;
                     mostrar_usuario(reg);
-                }
-                else{
+                    }
+                    else{
                     cout<<endl<<"¡El usuario no pudo ser registrado!"<<endl<<endl;
+                    }
                 }
                 system("pause");
             }
@@ -87,6 +91,7 @@ void menuUsuarios(){
                 listar_usuarios();
                 break;
             case 5:
+                eliminar_usuario();
                 break;
             case 6:volver=true;
                 break;
@@ -143,10 +148,10 @@ while(!volver){
     }
 
 }
-//Seteo de archivo de usuarios. No elimina el archivo, solo lo deja en 0.
+//Seteo de archivo de usuarios. No elimina el archivo, solo lo deja en 0. En realidad va en usuarios.cpp
 void opcionSetearTodo(char *o){
 if (*o == 'S'){
-fopen(archivoUsuarios,"wb");
+//fopen(archivoUsuarios,"wb");
 cout << "Eliminando..." << endl;    //Aca estaba jugando un poco jajaja
 system("pause");
 cout << "Datos eliminados con exitos" << endl;
@@ -159,7 +164,24 @@ cout << "Datos eliminados con exitos" << endl;
 
 }
 
-void modificarUsuario(){
-int i;
+//Armo la funcion gotoxy, parece que este compilador no lo trae por defecto.
+void gotoxy(int x, int y){
+COORD coordenada;
 
+coordenada.X = x;
+coordenada.Y = y;
+
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordenada);
 }
+
+//Prototipo de menu con fechas direccionables. Muy verde todavia
+/*void menu_con_flecha(){
+int tecla;
+int opcionSeleccionada=0;
+gotoxy(1,6 + opcionSeleccionada);
+
+cout << "--> ";
+
+tecla = getch();
+} **/
+
