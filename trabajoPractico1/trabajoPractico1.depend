@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1599458509 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
+1600483518 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -13,8 +13,9 @@
 	<iomanip>
 	"funciones.h"
 	"usuario.h"
+	"entrenamiento.h"
 
-1599366831 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
+1600311174 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
 
 1599360615 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
 	<iostream>
@@ -90,18 +91,18 @@
 1599276067 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
 	"fecha.h"
 
-1599458509 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
+1600482222 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
 	<iostream>
 	"fecha.h"
 	"usuario.h"
 	<ctime>
 
-1599352381 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.h
+1600482306 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.h
 
-1599456168 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.h
+1600479239 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.h
 	"fecha.h"
 
-1599458528 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
+1600483570 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -117,4 +118,20 @@
 	<iomanip>
 	"usuario.h"
 	"funciones.h"
+
+1600483483 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"entrenamiento.h"
+
+1600483118 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.h
+	"usuario.h"
+	"fecha.h"
 

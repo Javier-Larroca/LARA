@@ -2,32 +2,43 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="funciones.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="494" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="fecha.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="232" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funciones.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2814" topLine="2" />
-		</Cursor>
-		<Folding>
-			<Collapse line="17" />
-			<Collapse line="45" />
-			<Collapse line="108" />
-			<Collapse line="152" />
-			<Collapse line="167" />
-			<Collapse line="177" />
-		</Folding>
-	</File>
 	<File name="estructura.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="100" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="entrenamiento.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1285" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="fecha.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3656" topLine="128" />
+		</Cursor>
+	</File>
+	<File name="funciones.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7250" topLine="104" />
+		</Cursor>
+		<Folding>
+			<Collapse line="48" />
+			<Collapse line="111" />
+		</Folding>
+	</File>
+	<File name="fecha.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="411" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="62" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="entrenamiento.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="454" topLine="1" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -35,43 +46,14 @@
 			<Cursor1 position="333" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="usuario.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="usuario.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2742" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="26" />
-			<Collapse line="39" />
-			<Collapse line="60" />
-			<Collapse line="164" />
-			<Collapse line="178" />
-			<Collapse line="194" />
-			<Collapse line="222" />
-			<Collapse line="235" />
-			<Collapse line="248" />
-			<Collapse line="264" />
-			<Collapse line="284" />
-			<Collapse line="297" />
-			<Collapse line="310" />
-			<Collapse line="355" />
-			<Collapse line="419" />
-			<Collapse line="438" />
-			<Collapse line="466" />
-			<Collapse line="478" />
-			<Collapse line="479" />
-		</Folding>
-	</File>
-	<File name="fecha.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3850" topLine="131" />
+			<Cursor1 position="16315" topLine="476" />
 		</Cursor>
 	</File>
-	<File name="usuario.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="usuario.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1285" topLine="0" />
+			<Cursor1 position="1195" topLine="16" />
 		</Cursor>
-		<Folding>
-			<Collapse line="5" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>

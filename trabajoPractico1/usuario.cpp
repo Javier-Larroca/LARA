@@ -60,14 +60,13 @@ int buscar_usuario(int id_buscado){
 */
 Usuario cargar_usuario(){ //Cargamos usuario
     bool cancelarCarga=false;
-    //while (!cancelarCarga)
     Usuario a, *aux;
     aux = &a;
     char auxiliares[50]; //Creo esta cadena de forma auxiliar para validar espacios
-    int id, apto;
+    int id, apto, tipoDeCarga=1; //Tipo de carga es para saber si estamos cargando un usuario o un entrenamiento.
     cout << "ID   : ";
     cin >> id;   ///Falta validacion de que el id no este repetido.
-    aux->id = validar_id(id); //Creo que funciona bien.
+    aux->id = validar_id(id, tipoDeCarga); //Creo que funciona bien.
     cout << "Nombres  : ";
     cin.ignore();
     cin.getline(auxiliares, 50); ///Falta quitar espacios en nombre
@@ -78,7 +77,7 @@ Usuario cargar_usuario(){ //Cargamos usuario
     valida_espacios(auxiliares);
     strcpy(aux->apellidos, auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Ingrese fecha de nacimiento " << endl;
-    aux->nac=cargar_fecha(); //Llamo a la función cargar fecha
+    aux->nac=cargar_fecha(tipoDeCarga); //Llamo a la función cargar fecha
     if (aux->nac.dia == 0){ //En fecha.cpp lo comento también, se me ocurrio usar el dia como bandera para cortar la carga si es menor.
     cout << "\nSe cancela carga de usuario por no cumplir con la edad minima...\n";
     return a;
@@ -476,11 +475,21 @@ while (n[0] == ' ' || n[longitud-1] == ' '){
 
 }
 
-int validar_id(int p){
-while (leer_usuario(buscarUsuario(p)).id==p){
-cout<< "\nEl ID ingresado ya fue asignado a otro usuario. Ingrese un nuevo ID: \n";
-cout << "ID: ";
-cin >> p;
+int validar_id(int p, int t){
+if (t==1){ //Si es 1, es carga de usuario.
+    while (leer_usuario(buscarUsuario(p)).id==p){ //Si el usuario se repite, entra en el while hasta ingresar un id nuevo.
+        cout<< "\nEl ID ingresado ya fue asignado a otro usuario. Ingrese un nuevo ID: \n";
+        cout << "ID: ";
+        cin >> p;
+    }
+}else{ //Si no es uno, mandamos el numero 2 por lo que entre en este ciclo.
+    while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
+        cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
+        cout <<"\nID: ";
+        cin >>p;
+    }
+    cout << "Se cargará los datos de entrenamiento al usuario: " << leer_usuario(buscarUsuario(p)).nombres << leer_usuario(buscarUsuario(p)).apellidos;
 }
 return p;
+
 }

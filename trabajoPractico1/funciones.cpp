@@ -12,6 +12,7 @@
 using namespace std;
 #include "funciones.h"
 #include "usuario.h"
+#include "entrenamiento.h"
 
 
 
@@ -22,7 +23,9 @@ int opcion=atoi(o); //Aca paso la cadena a numeros
             menuUsuarios();//Accede al submenu de usuarios.
         }
             break;
-        case 2:
+        case 2:{
+            menuEntrenamiento();//Accede al submenu entrenamiento
+        }
             break;
         case 3:
             break;
@@ -185,3 +188,51 @@ cout << "--> ";
 tecla = getch();
 } **/
 
+//Submenu Entrenamiento
+void menuEntrenamiento(){
+    bool volver=false;
+    char opcion[1];
+    int opcionElegida;
+    while(!volver){
+             system("cls");
+            cout <<endl;
+            cout << "           ENTRENAMIENTO         "<< endl;
+            cout << "-----------------------------------------------"<< endl;
+            cout <<endl;
+            cout <<"  1. Nuevo entrenamiento"<< endl;
+            cout <<"  2. Modificar entrenamiento"<< endl;
+            cout <<"  3. Listar entrenamiento por ID"<< endl;
+            cout <<"  4. Listar entrenamiento por ID Usuario"<< endl;
+            cout <<"  5. Listar todos los entrenamientos" << endl;
+            cout <<"  6. Volver al menú principal" << endl;
+            cout <<endl;
+            cout <<"Seleccione una opción: ";
+            cin >> opcion;
+            opcionElegida=atoi(opcion);
+            system("cls");
+                switch (opcionElegida){
+            case 1:{
+                Entrenamiento reg; ///Creo un registro
+                cargar_entrenamiento();
+                system("pause");
+            }
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:volver=true;
+                break;
+            default:
+                cout <<"-----------------------------------------------------------------------------------"<< endl;
+                cout <<"         La opción ingresada no es correcta. Porfavor ingrese una opción válida    "<< endl;
+                cout <<"-----------------------------------------------------------------------------------"<< endl;
+                system("pause");
+                break;
+            }
+    }
+}

@@ -27,7 +27,7 @@ void mostrarDatosUsuarios(Usuario r); //Mostrar datos para los encabezados en fo
 bool modificar_atributo(int o, Usuario *r, bool *m); //Modifica atributo. Le paso la opcion elegida, la direccion del usuario y un booleano para validar si modifico algun atributo
 void eliminar_usuario();
 void valida_espacios(char *n);
-int validar_id(int p);
+int validar_id(int p, int t); //Recibe el id del usuario a cargar y también un int con el tipo de carga para saber si estamos validando en carga de Usuario o Entrenamiento.
 ///////////////////////////////////////////////////////////////////
 bool guardar_usuario(Usuario, int);
 int cantidadUsuarios();

@@ -4,7 +4,7 @@ using namespace std;
 #include "usuario.h"
 #include <ctime>
 
-Fecha validar_fecha(Fecha reg)
+Fecha validar_fecha(Fecha reg, int r)
 {
     bool band=true;
     Fecha actual;
@@ -90,7 +90,7 @@ Fecha validar_fecha(Fecha reg)
     }
     else{
         cout<<">Fecha incorrecta"<<endl;
-        return cargar_fecha();
+        return cargar_fecha(r);
     }
 }
 
@@ -127,7 +127,7 @@ int edad(Fecha reg){
 
 }
 
-Fecha cargar_fecha(){ //Carga una fecha.
+Fecha cargar_fecha(int r){ //Carga una fecha.
     Fecha reg;
     cout << "Día: ";
     cin >> reg.dia;
@@ -135,8 +135,8 @@ Fecha cargar_fecha(){ //Carga una fecha.
     cin >> reg.mes;
     cout << "Año: ";
     cin >> reg.anio;
-    reg = validar_fecha(reg);
-    if (edad(reg)<=13){
+    reg = validar_fecha(reg, r);
+    if (r==1 && edad(reg)<=13){ //Para realizar esta validación el tipo de carga que le pasamos tiene que ser 1(Usuario).
         cout<<"La edad del usuario no es permitida"<<endl;
         reg.dia=0; //Se me ocurrio que si la edad es menor que 13, lo setea a 0. Usarlo como bandera digamos, tal vez puede funcionar.
     }
