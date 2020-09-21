@@ -8,5 +8,5 @@ void menuConfiguracion();// SubMenu configuracion
 void menuEntrenamiento();//SubMenu entrenamiento
 void opcionSetearTodo(char *o);//Setea archivo de usuarios.dat (Jugue un poco con puntero y borrar el archivo, nada importante)
 void modificarUsuario();//Pantalla para modificar el usuario
-void gotoxy(int x, int y);// Armo función Gotoxy
+//void gotoxy(int x, int y);// Armo función Gotoxy
 #endif // FUNCIONES_H_INCLUDED

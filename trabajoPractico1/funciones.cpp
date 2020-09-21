@@ -27,7 +27,10 @@ int opcion=atoi(o); //Aca paso la cadena a numeros
             menuEntrenamiento();//Accede al submenu entrenamiento
         }
             break;
-        case 3:
+        case 3:{
+            //menuReportes();
+
+        }
             break;
         case 4:menuConfiguracion();
             break;
@@ -153,21 +156,22 @@ while(!volver){
 }
 //Seteo de archivo de usuarios. No elimina el archivo, solo lo deja en 0. En realidad va en usuarios.cpp
 void opcionSetearTodo(char *o){
-if (*o == 'S'){
-//fopen(archivoUsuarios,"wb");
-cout << "Eliminando..." << endl;    //Aca estaba jugando un poco jajaja
-system("pause");
-cout << "Datos eliminados con exitos" << endl;
-
-}else{
-    system("cls");
-    cout << "Se cancela seteo de información" << endl;
+    if (*o == 'S'){
+    //fopen(archivoUsuarios,"wb");
+    cout << "Eliminando..." << endl;    //Aca estaba jugando un poco jajaja
     system("pause");
-    }
+    cout << "Datos eliminados con exitos" << endl;
+
+    }else{
+        system("cls");
+        cout << "Se cancela seteo de información" << endl;
+        system("pause");
+        }
 
 }
 
 //Armo la funcion gotoxy, parece que este compilador no lo trae por defecto.
+/**
 void gotoxy(int x, int y){
 COORD coordenada;
 
@@ -175,7 +179,7 @@ coordenada.X = x;
 coordenada.Y = y;
 
 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordenada);
-}
+}*/
 
 //Prototipo de menu con fechas direccionables. Muy verde todavia
 /*void menu_con_flecha(){
@@ -214,6 +218,13 @@ void menuEntrenamiento(){
             case 1:{
                 Entrenamiento reg; ///Creo un registro
                 cargar_entrenamiento();
+
+                if (guardar_entrenamiento(reg)){
+                    cout<<"El entrenamiento se pudo guardar con exito"<<endl;
+                }
+                else{
+                    cout<<"El entrenamiento no se pudo guardar."<<endl;
+                }
                 system("pause");
             }
                 break;
@@ -223,7 +234,10 @@ void menuEntrenamiento(){
                 break;
             case 4:
                 break;
-            case 5:
+            case 5:{
+                listar_entrenamientos();
+                system("pause");
+            }
                 break;
             case 6:volver=true;
                 break;

@@ -17,4 +17,7 @@ struct Entrenamiento {
 //Funciones para entrenamiento
 Entrenamiento cargar_entrenamiento();//Carga un nuevo Entrenamiento
 int validar_actividad(char *o, int a);//Valida actividad
+void listar_entrenamientos(); //No se, empece a probar
+void mostrar_datos_entrenamientos(Entrenamiento r);
+bool guardar_entrenamiento(Entrenamiento);
 #endif // ENTRENAMIENTO_H_INCLUDED

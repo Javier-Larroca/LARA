@@ -33,7 +33,7 @@
 
 1598569139 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\estructura.h
 
-1600483821 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
+1600658198 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -49,9 +49,9 @@
 	"usuario.h"
 	"entrenamiento.h"
 
-1600483821 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.h
+1600536402 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.h
 
-1600530463 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\main.cpp
+1600646376 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\main.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -65,15 +65,15 @@
 	<stdio.h>
 	"funciones.h"
 
-1600483821 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.cpp
+1600531337 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.cpp
 	<iostream>
 	"fecha.h"
 	"usuario.h"
 	<ctime>
 
-1600483821 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.h
+1600531337 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.h
 
-1600483821 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
+1600658198 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -90,7 +90,7 @@
 	"usuario.h"
 	"funciones.h"
 
-1600483821 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
+1600531337 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
 	"fecha.h"
 
 1600482222 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
@@ -137,29 +137,33 @@
 	"usuario.h"
 	"fecha.h"
 
-1600483821 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
+1600659192 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
+	<iostream>
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
 	<conio.h>
 	<cstdio>
+	<cstring>
 	<ctime>
 	<string.h>
+	<string>
 	<windows.h>
 	<stdio.h>
+	<iomanip>
 	"entrenamiento.h"
 
-1600483821 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
+1600657567 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
-1600529082 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\ui.cpp
+1600559231 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\ui.cpp
 	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1600529009 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\ui.h
+1600559361 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\ui.h
 
 1600529120 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\rlutil.h
 	<iostream>

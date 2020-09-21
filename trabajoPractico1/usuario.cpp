@@ -79,8 +79,8 @@ Usuario cargar_usuario(){ //Cargamos usuario
     cout << "Ingrese fecha de nacimiento " << endl;
     aux->nac=cargar_fecha(tipoDeCarga); //Llamo a la función cargar fecha
     if (aux->nac.dia == 0){ //En fecha.cpp lo comento también, se me ocurrio usar el dia como bandera para cortar la carga si es menor.
-    cout << "\nSe cancela carga de usuario por no cumplir con la edad minima...\n";
-    return a;
+        cout << "\nSe cancela carga de usuario por no cumplir con la edad minima...\n";
+        return a;
     }
     cout << "Fecha ingresada: "; ///Habria que ver la forma de cortar aca la carga del usuario si es menor de 13 años
     mostrar_fecha(aux->nac);
@@ -141,21 +141,21 @@ Usuario cargar_usuario(){ //Cargamos usuario
 //Prototipo en forma de tabla
 
 void listar_usuarios(){
-Usuario reg;
-FILE *f;
+    Usuario reg;
+    FILE *f;
 
-f=fopen(archivoUsuarios, "rb");
+    f=fopen(archivoUsuarios, "rb");
 
- if (f == NULL){
+    if (f == NULL){
         cout << "No se puede leer el archivo.";
         return;
     }
- if (!fread(&reg, sizeof(Usuario), 1, f)){  //Valida que existan usuarios cargados
+    if (!fread(&reg, sizeof(Usuario), 1, f)){  //Valida que existan usuarios cargados
         cout << "No existen usuarios cargados" << endl;
     }
     encabezadoTablaUsuarios();
     while (fread(&reg, sizeof (Usuario), 1, f)){
-    mostrarDatosUsuarios(reg);
+        mostrarDatosUsuarios(reg);
     }
     system("pause");
 }
@@ -175,7 +175,7 @@ bool guardar_usuario(Usuario reg){
 
 
 //Encabezado para reporte de usuarios en forma de tabla
-    void encabezadoTablaUsuarios(){
+void encabezadoTablaUsuarios(){
     cout << left;
     cout << setw(14) << "ID" << "|";
     cout << setw(20) << "Nombres" << "|";
@@ -193,26 +193,28 @@ bool guardar_usuario(Usuario reg){
 
 void mostrarDatosUsuarios(Usuario r){
     char aux = toupper(r.perfilActividad); //Uso un char auxiliar para mostrar todas las letras en mayusculas
-    cout << left;
-    cout << setw(14) << r.id << "|";
-    cout << setw(20) << r.nombres << "|";
-    cout << setw(20) << r.apellidos << "|";
-    cout << right;
-    cout << setfill('0');               //Esto es para que muestre un 0 en los dias del 1 al 9
-    cout << setw(2) <<r.nac.dia <<"/";
-    cout <<  setw(2) <<r.nac.mes << "/";
-    cout << left;
-    cout << setfill(' ');              //El setfill sigue de largo hasta encontrar un endl, por lo que lo lleno con espacios. Si genera problemas ponemos un if y listo.
-    cout << setw(10) <<r.nac.anio << "|";
-    cout << fixed;
-    cout << setw(7) << setprecision(2) << r.altura << "|";
-    cout << fixed;
-    cout << setw(7) << setprecision(2) << r.peso << "|";
-    cout << setw(10) << aux << "|";
-    cout << setw(11) << r.aptoMedico << "|";
-    cout << right;
-    cout << setw(6) << r.estado << "|";
-    cout << endl;
+    if (r.estado){
+        cout << left;
+        cout << setw(14) << r.id << "|";
+        cout << setw(20) << r.nombres << "|";
+        cout << setw(20) << r.apellidos << "|";
+        cout << right;
+        cout << setfill('0');               //Esto es para que muestre un 0 en los dias del 1 al 9
+        cout << setw(2) <<r.nac.dia <<"/";
+        cout <<  setw(2) <<r.nac.mes << "/";
+        cout << left;
+        cout << setfill(' ');              //El setfill sigue de largo hasta encontrar un endl, por lo que lo lleno con espacios. Si genera problemas ponemos un if y listo.
+        cout << setw(10) <<r.nac.anio << "|";
+        cout << fixed;
+        cout << setw(7) << setprecision(2) << r.altura << "|";
+        cout << fixed;
+        cout << setw(7) << setprecision(2) << r.peso << "|";
+        cout << setw(10) << aux << "|";
+        cout << setw(11) << r.aptoMedico << "|";
+        cout << right;
+        cout << setw(6) << r.estado << "|";
+        cout << endl;
+    }
 }
 
 
@@ -445,18 +447,18 @@ longitud = strlen(opc);
         system("cls");
         reg.estado=false;
             if (guardar_usuario(reg, buscarUsuario(id))== true){
-            gotoxy(10,5);
+            //gotoxy(10,5);
             cout << "Se da de baja al usuario: " << reg.nombres << " " << reg.apellidos << endl;
             cout << "\n";
             system("pause");
             }else{
-            gotoxy(10,5);
+            //gotoxy(10,5);
             cout << "No se puedo dar de baja al usuario: " << reg.nombres << " " << reg.apellidos << endl;
             cout << "\n";
             }
         }if(toupper(opc[0])=='N'){
         system("cls");
-        gotoxy(10,5);
+        //gotoxy(10,5);
         cout << "Se cancela baja de usuario\n";
         system("pause");
         }
