@@ -36,6 +36,8 @@ Entrenamiento cargar_entrenamiento(){
     cout << "\nIngrese tiempo en minutos: ";
     cin >> aux->tiempo;
 
+    return a;
+
 }
 
 //Valida actividad a registrar

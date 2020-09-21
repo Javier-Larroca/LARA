@@ -217,7 +217,7 @@ void menuEntrenamiento(){
                 switch (opcionElegida){
             case 1:{
                 Entrenamiento reg; ///Creo un registro
-                cargar_entrenamiento();
+                reg=cargar_entrenamiento();
 
                 if (guardar_entrenamiento(reg)){
                     cout<<"El entrenamiento se pudo guardar con exito"<<endl;

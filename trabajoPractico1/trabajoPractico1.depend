@@ -179,3 +179,105 @@
 	<sys/types.h>
 	<sys/time.h>
 
+1600729012 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
+	<iostream>
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"entrenamiento.h"
+
+1600728332 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
+	"usuario.h"
+	"fecha.h"
+
+1600479239 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.h
+	"fecha.h"
+
+1600482306 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\fecha.h
+
+1600482222 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\fecha.cpp
+	<iostream>
+	"fecha.h"
+	"usuario.h"
+	<ctime>
+
+1600728820 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+
+1600728332 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.h
+
+1600728332 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\main.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+
+1600728332 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\ui.cpp
+	<iostream>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1600728332 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\ui.h
+
+1600534705 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1600728332 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
+	<iostream>
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"usuario.h"
+	"funciones.h"
+

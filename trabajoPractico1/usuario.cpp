@@ -248,9 +248,6 @@ bool guardar_usuario(Usuario reg, int pos){
 }
 
 void listar_usuarios_x_id(){
-    //cls();
-    //title("LISTADO DE PARTICIPANTE x ID");
-    //gotoxy(1, 5);
     int id, pos;
     cout << "ID: ";
     cin >> id;
