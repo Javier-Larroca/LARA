@@ -33,7 +33,7 @@
 
 1598569139 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\estructura.h
 
-1600658198 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
+1600730024 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -73,7 +73,7 @@
 
 1600531337 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.h
 
-1600658198 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
+1600730218 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -137,7 +137,7 @@
 	"usuario.h"
 	"fecha.h"
 
-1600659192 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
+1600732019 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -153,7 +153,7 @@
 	<iomanip>
 	"entrenamiento.h"
 
-1600657567 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
+1600731319 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 

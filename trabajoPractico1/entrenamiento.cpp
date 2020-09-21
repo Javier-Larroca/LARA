@@ -25,6 +25,7 @@ Entrenamiento cargar_entrenamiento(){
     Entrenamiento a, *aux;
     aux=&a;
     int id, tipoDeCarga=2;
+    aux->id=cantidad_entrenamientos()+1;
     cout << "Ingrese ID de usuario correspondiente: ";
     cin >> id;
     aux->idUsuario = validar_id(id, tipoDeCarga);
@@ -62,11 +63,14 @@ int validar_actividad(char *o, int a){
 }
 
 void mostrar_datos_entrenamientos(Entrenamiento r){
-    cout<<r.id<<endl;
-    cout<<r.idUsuario<<endl;
-    cout<<r.actividad<<endl;
-    cout<<r.calorias<<endl;
-    cout<<"KJSKSJDKSJDKSJDKS"<<endl;
+    cout<<"ID: "<<r.id<<endl;
+    cout<<"ID Usuario: "<<r.idUsuario<<endl;
+    cout<<"Actividad: "<<r.actividad<<endl;
+    cout<<"Calorias: "<<r.calorias<<endl;
+    cout<<"Fecha de entrenamiento: ";
+    mostrar_fecha(r.fechaDeEntrenamiento);
+    cout<<"Tiempo: "<<r.tiempo<<endl;
+    cout<<endl;
 }
 
 void listar_entrenamientos(){
@@ -82,11 +86,12 @@ void listar_entrenamientos(){
             cout << "No existen entrenamientos cargados" << endl;
     }
     //encabezadoTablaUsuarios();
-    while (fread(&reg, sizeof (Entrenamiento), 1, f)){
+    while (fread(&reg, sizeof (Entrenamiento), 1, f)==1){
         mostrar_datos_entrenamientos(reg);
         cout<<"Llegamos al while"<<endl;
     }
     system("pause");
+    fclose(f);
     return;
 }
 
@@ -102,7 +107,18 @@ bool guardar_entrenamiento(Entrenamiento reg){
     return grabo;
 }
 
-
+int cantidad_entrenamientos() {
+	int cantidad;
+	FILE* pFile;
+	pFile = fopen(archivoEntrenamiento, "rb");
+	if (pFile == NULL) {
+		return 0;
+	}
+	fseek(pFile, 0, SEEK_END);
+	cantidad = ftell(pFile) / sizeof(Entrenamiento);
+	fclose(pFile);
+	return cantidad;
+}
 
 
 

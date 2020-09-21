@@ -20,4 +20,5 @@ int validar_actividad(char *o, int a);//Valida actividad
 void listar_entrenamientos(); //No se, empece a probar
 void mostrar_datos_entrenamientos(Entrenamiento r);
 bool guardar_entrenamiento(Entrenamiento);
+int cantidad_entrenamientos();
 #endif // ENTRENAMIENTO_H_INCLUDED

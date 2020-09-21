@@ -475,20 +475,19 @@ while (n[0] == ' ' || n[longitud-1] == ' '){
 }
 
 int validar_id(int p, int t){
-if (t==1){ //Si es 1, es carga de usuario.
-    while (leer_usuario(buscarUsuario(p)).id==p){ //Si el usuario se repite, entra en el while hasta ingresar un id nuevo.
-        cout<< "\nEl ID ingresado ya fue asignado a otro usuario. Ingrese un nuevo ID: \n";
-        cout << "ID: ";
-        cin >> p;
+    if (t==1){ //Si es 1, es carga de usuario.
+        while (leer_usuario(buscarUsuario(p)).id==p){ //Si el usuario se repite, entra en el while hasta ingresar un id nuevo.
+            cout<< "\nEl ID ingresado ya fue asignado a otro usuario. Ingrese un nuevo ID: \n";
+            cout << "ID: ";
+            cin >> p;
+        }
+    }else{ //Si no es uno, mandamos el numero 2 por lo que entre en este ciclo.
+        while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
+            cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
+            cout <<"\nID: ";
+            cin >>p;
+        }
+        cout << "Se cargará los datos de entrenamiento al usuario: " << leer_usuario(buscarUsuario(p)).nombres <<" "<< leer_usuario(buscarUsuario(p)).apellidos;
     }
-}else{ //Si no es uno, mandamos el numero 2 por lo que entre en este ciclo.
-    while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
-        cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
-        cout <<"\nID: ";
-        cin >>p;
-    }
-    cout << "Se cargará los datos de entrenamiento al usuario: " << leer_usuario(buscarUsuario(p)).nombres << leer_usuario(buscarUsuario(p)).apellidos;
-}
-return p;
-
+    return p;
 }
