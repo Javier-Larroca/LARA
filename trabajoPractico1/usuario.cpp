@@ -59,6 +59,7 @@ int buscar_usuario(int id_buscado){
 
 */
 Usuario cargar_usuario(){ //Cargamos usuario
+    system("cls");
     bool cancelarCarga=false;
     Usuario a, *aux;
     aux = &a;
@@ -115,49 +116,26 @@ Usuario cargar_usuario(){ //Cargamos usuario
 }
 
 
-//Listar usuarios
-
-//Original
-/* void listar_usuarios(){
-    Usuario reg;
-    FILE *f;
-    int aux;
-    f = fopen(archivoUsuarios, "rb");
-    if (f == NULL){
-        cout << "No se puede leer el archivo.";
-        return;
-    }
-    if (!fread(&reg, sizeof(Usuario), 1, f)){  //Valida que existan usuarios cargados
-        cout << "No existen usuarios cargados" << endl;
-        }
-    while(fread(&reg, sizeof(Usuario), 1, f)){
-        mostrar_usuario(reg);
-        cout << endl;
-    }
-    system("pause");
-    fclose(f);
-} **/
 
 //Prototipo en forma de tabla
 
 void listar_usuarios(){
+    system("cls");
     Usuario reg;
     FILE *f;
-
     f=fopen(archivoUsuarios, "rb");
 
     if (f == NULL){
         cout << "No se puede leer el archivo.";
         return;
     }
-    if (!fread(&reg, sizeof(Usuario), 1, f)){  //Valida que existan usuarios cargados
-        cout << "No existen usuarios cargados" << endl;
-    }
     encabezadoTablaUsuarios();
     while (fread(&reg, sizeof (Usuario), 1, f)){
-        mostrarDatosUsuarios(reg);
+         mostrarDatosUsuarios(reg);
     }
+    fclose(f);
     system("pause");
+    system("cls");
 }
 
 //Guardar usuarios
@@ -248,9 +226,11 @@ bool guardar_usuario(Usuario reg, int pos){
 }
 
 void listar_usuarios_x_id(){
+    system("cls");
     int id, pos;
     cout << "ID: ";
     cin >> id;
+    system("cls");
     pos = buscarUsuario(id);
     if (pos >= 0){
         mostrar_usuario(leer_usuario(pos));
@@ -258,6 +238,8 @@ void listar_usuarios_x_id(){
     else{
         cout<<"No existe el usuario"<<endl;;
     }
+    system("pause");
+    system("cls");
 }
 
 int buscarUsuario(int idBuscado){
@@ -294,7 +276,7 @@ int cantidadUsuarios(){
 }
 
 bool modificar_usuario(){
-    //cls();
+    system("cls");
     //title("MODIFICAR PARTICIPANTE");
     //gotoxy(1, 5);
     int id, pos, opcion;
@@ -348,6 +330,7 @@ bool modificar_usuario(){
         system("pause");
         return false;
     }
+    system("cls");
 }
 
 //Modifico atributo
@@ -420,6 +403,7 @@ int id;
 Usuario reg;
 char opc[10];
 long int longitud;
+system("cls");
 cout << "Eliminar usuario\n";
 cout << "--------------------------------------\n";
 cout << "Ingrese ID de usuario a eliminar\n";
@@ -459,8 +443,8 @@ longitud = strlen(opc);
         cout << "Se cancela baja de usuario\n";
         system("pause");
         }
+        system("cls");
 }
-
 //Valida espacios en cadena
 void valida_espacios(char *n){
 long int longitud;

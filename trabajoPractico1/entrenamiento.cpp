@@ -19,6 +19,7 @@ const char *archivoEntrenamiento= "datos/entrenamiento.dat";
 
 //Cargamos entrenamiento
 Entrenamiento cargar_entrenamiento(){
+    system("cls");
     bool cancelarCarga=false;
     Usuario reg; //Creo un usuario de soporte para acceder a sus atributos
     char opcion[50]; //Tengo que usar asignación dinamica aca para validar entrada
@@ -74,6 +75,7 @@ void mostrar_datos_entrenamientos(Entrenamiento r){
 }
 
 void listar_entrenamientos(){
+    system("cls");
     Entrenamiento reg;
     FILE *f;
     f= fopen(archivoEntrenamiento, "rb");
@@ -82,16 +84,13 @@ void listar_entrenamientos(){
         cout<<"No se puede leer el archivo de entrenamientos"<<endl;
         return;
     }
-    if (!fread(&reg, sizeof(Entrenamiento), 1, f)){  //Valida que existan entramientos cargados
-            cout << "No existen entrenamientos cargados" << endl;
-    }
     //encabezadoTablaUsuarios();
-    while (fread(&reg, sizeof (Entrenamiento), 1, f)==1){
+    while (fread(&reg, sizeof (Entrenamiento), 1, f)){
         mostrar_datos_entrenamientos(reg);
-        cout<<"Llegamos al while"<<endl;
     }
-    system("pause");
     fclose(f);
+    system("pause");
+    system("cls");
     return;
 }
 

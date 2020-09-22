@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1600483518 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
+1600807274 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -14,10 +14,12 @@
 	"funciones.h"
 	"usuario.h"
 	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
 
-1600311174 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
+1600805726 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\funciones.h
 
-1599360615 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
+1600804178 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\main.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -104,7 +106,7 @@
 1600479239 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.h
 	"fecha.h"
 
-1600483570 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
+1600809663 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -121,19 +123,23 @@
 	"usuario.h"
 	"funciones.h"
 
-1600483483 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.cpp
+1600805726 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.cpp
+	<iostream>
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
 	<conio.h>
 	<cstdio>
+	<cstring>
 	<ctime>
 	<string.h>
+	<string>
 	<windows.h>
 	<stdio.h>
+	<iomanip>
 	"entrenamiento.h"
 
-1600483118 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.h
+1600733607 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
@@ -179,7 +185,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600729012 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
+1600744887 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -195,7 +201,7 @@
 	<iomanip>
 	"entrenamiento.h"
 
-1600728332 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
+1600733607 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
@@ -210,7 +216,7 @@
 	"usuario.h"
 	<ctime>
 
-1600728820 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
+1600739113 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -264,7 +270,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600728332 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
+1600744852 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -280,4 +286,26 @@
 	<iomanip>
 	"usuario.h"
 	"funciones.h"
+
+1600728332 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\ui.cpp
+	<iostream>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1600728332 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\ui.h
+
+1600534705 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 
