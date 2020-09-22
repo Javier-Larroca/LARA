@@ -466,12 +466,22 @@ int validar_id(int p, int t){
             cin >> p;
         }
     }else{ //Si no es uno, mandamos el numero 2 por lo que entre en este ciclo.
-        while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
-            cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
-            cout <<"\nID: ";
-            cin >>p;
+        if (t==2){
+            while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
+                cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
+                cout <<"\nID: ";
+                cin >>p;
+            }
+            cout << "Se cargará los datos de entrenamiento al usuario: " << leer_usuario(buscarUsuario(p)).nombres <<" "<< leer_usuario(buscarUsuario(p)).apellidos;
         }
-        cout << "Se cargará los datos de entrenamiento al usuario: " << leer_usuario(buscarUsuario(p)).nombres <<" "<< leer_usuario(buscarUsuario(p)).apellidos;
+        else{
+            while (leer_usuario(buscarUsuario(p)).id!=p){ //Si el usuario no existe, entra en el while hasta ingresar un id válido.
+                cout << "\nEl ID ingresado no existe. Porfavor ingrese un usuario válido";
+                cout <<"\nID: ";
+                cin >>p;
+            }
+            cout << "Se listaran los entrenamientos del siguiente usuario: " << leer_usuario(buscarUsuario(p)).nombres <<" "<< leer_usuario(buscarUsuario(p)).apellidos<<endl<<endl;
+        }
     }
     return p;
 }

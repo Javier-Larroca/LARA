@@ -177,11 +177,32 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
                 system("cls");
             }
                 break;
-            case 5:
+            case 5:{
+                system("cls");
+                cout<<"MODIFICAR ENTRENAMIENTO"<<endl;
+                system("pause");
+                system("cls");
+            }
                 break;
-            case 6:
+            case 6:{
+                system("cls");
+                cout<<"LISTAR ENTRENAMIENTO POR ID"<<endl<<endl;
+
+                listar_entrenamiento_x_id();
+
+                system("pause");
+                system("cls");
+            }
                 break;
-            case 7:
+            case 7:{
+                system("cls");
+                cout<<"LISTAR ENTRENAMIENTO POR USUARIO"<<endl<<endl;
+
+                listar_entranamiento_x_usuario();
+
+                system("pause");
+                system("cls");
+            }
                 break;
             case 8:{
                 listar_entrenamientos();
