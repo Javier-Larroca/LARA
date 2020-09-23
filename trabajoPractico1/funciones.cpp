@@ -181,6 +181,7 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
             case 5:{
                 system("cls");
                 cout<<"MODIFICAR ENTRENAMIENTO"<<endl;
+                modificar_entrenamiento_x_id();
                 system("pause");
                 system("cls");
             }

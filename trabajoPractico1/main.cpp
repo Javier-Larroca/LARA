@@ -17,7 +17,7 @@ using namespace std;
 
 int main(){
     setlocale(LC_ALL, "Spanish");
-    system("color 1A");
+    system("color 70");
     SetConsoleTitle("   -    LARA   -   ");
     //initUI();
     //title("", APP_TITLEFORECOLOR, APP_TITLEBACKCOLOR);

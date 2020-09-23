@@ -26,4 +26,6 @@ Entrenamiento leer_entrenamiento(int);
 void listar_entrenamiento_x_id();
 void listar_entranamiento_x_usuario();
 int buscar_entrenamiento_x_usuario(int);
+bool guardar_entrenamiento(Entrenamiento, int);
+void modificar_entrenamiento_x_id();
 #endif // ENTRENAMIENTO_H_INCLUDED

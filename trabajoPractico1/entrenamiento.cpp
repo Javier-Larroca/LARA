@@ -39,8 +39,18 @@ Entrenamiento cargar_entrenamiento(){
     aux->actividad=validar_actividad(opcion, leer_usuario(buscarUsuario(aux->idUsuario)).aptoMedico);
     cout << "\nIngrese calorias: ";
     cin >> aux->calorias;
-    cout << "\nIngrese tiempo en minutos: "<<endl;
+    while (a.calorias<1){
+        cout<<"Ingreso un numero de calorias no valido."<<endl;
+        cout << " >Ingrese calorias: ";
+        cin >> aux->calorias;
+    }
+    cout << "\nIngrese tiempo en minutos: ";
     cin >> aux->tiempo;
+    while (a.tiempo<1){
+        cout<<"Ingreso un numero de minutos no valido."<<endl;
+        cout << " >Ingrese tiempo en minutos: ";
+        cin >> aux->tiempo;
+    }
 
     return a;
 }
@@ -211,3 +221,65 @@ int buscar_entrenamiento_x_usuario(int idUsuario) {
 	fclose(f);
 	return cont;
 }
+
+void modificar_entrenamiento_x_id(){
+    int codigo, pos,op;
+    Entrenamiento reg;
+    cout << "ID de entrenamiento a modificar: ";
+    cin >> codigo;
+
+    pos = buscar_entrenamiento(codigo);
+
+    if (pos >= 0){
+        reg = leer_entrenamiento(pos);
+        mostrar_datos_entrenamiento(reg);
+    }
+    else{
+        cout<<"El entrenamiento ingresado no pudo ser leido."<<endl;
+    }
+
+    cout<<"¿Que datos desea cambiar del entrenamiento?"<<endl<<endl;
+    cout<<" 1. Tiempo"<<endl;
+    cout<<" 2. Calorias"<<endl;
+    cout<<"Elija la opcion: ";
+    cin>>op;
+    switch(op){
+        case(1):{
+            cout<<"Ingrese tiempo: ";
+            cin>>reg.tiempo;
+        }
+        break;
+        case(2):{
+            cout<<"Ingrese calorias: ";
+            cin>>reg.calorias;
+        }
+        break;
+        default:{
+        cout<<"Opcion ingresada incorrecta"<<endl;
+        }
+    }
+
+    if(guardar_entrenamiento(reg,pos)){
+        cout<<"La modificacion se realizo con exito"<<endl;
+    }
+    else{
+        cout<<"La modificacion no pudo realizarce."<<endl;
+    }
+}
+
+bool guardar_entrenamiento(Entrenamiento reg, int pos) {
+	FILE* f;
+	bool bGrabo = true;
+	f = fopen(archivoEntrenamiento, "rb+");
+	if (f == NULL) {
+		return false;
+	}
+	fseek(f, pos * sizeof(Entrenamiento), SEEK_SET);
+	bGrabo = fwrite(&reg, sizeof(Entrenamiento), 1, f);
+	fclose(f);
+	return bGrabo;
+}
+
+
+
+
