@@ -15,6 +15,7 @@ using namespace std;
 #include "entrenamiento.h"
 #include "ui.h"
 #include "rlutil.h"
+#include "configuracion.h"
 using namespace rlutil;
 
 //Menu principal
@@ -215,7 +216,8 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
     }
     if (m==5){ //Accede a MENU CONFIGURACION
         switch (aux){
-            case 4:
+            case 4:generarBackUp();
+                    system("cls");
                 break;
             case 5:
                 break;
@@ -226,6 +228,54 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
     }
 }
 *p=aux; //Despues de todo el recorrido del switch, le asigna el valor nuevo de la tecla al puntero p.
+}
+
+void validaTeclaSubMenu(char t, bool *f, int *p, int m){ //Valida tecla para las opciones de Configuracion y reportes ya que comparten 3 opciones.
+int aux=*p;
+    if (t==72){ //TECLA ARRIBA
+        switch(aux){
+            case 4:aux=6;
+                break;
+            case 5:aux=4;
+                break;
+            case 6:aux=5;
+                break;
+        }
+
+    }
+    if (t==80){ //TECLA ABAJO
+        switch(aux){
+            case 4:aux=5;
+                break;
+            case 5:aux=6;
+                break;
+            case 6:aux=4;
+                break;
+        }
+    }
+    if (t==13){ //ENTER
+      if(m==4){ //Reportes
+        switch(aux){
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:*f=true;
+                break;
+        }
+      }
+      if (m==5){ //Configuracion
+        switch(aux){
+            case 4:generarPin();             //Genera pin aleatorio
+                break;
+            case 5:             //Genera backup
+                break;
+            case 6:*f=true;
+                break;
+        }
+        }
+    }
+    *p=aux;
 }
 
 //Submenu Usuarios

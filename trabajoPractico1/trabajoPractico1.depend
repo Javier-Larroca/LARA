@@ -187,7 +187,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600744887 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
+1600821314 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -203,7 +203,7 @@
 	<iomanip>
 	"entrenamiento.h"
 
-1600733607 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
+1600821314 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
@@ -218,7 +218,7 @@
 	"usuario.h"
 	<ctime>
 
-1600739113 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
+1600822730 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -233,10 +233,13 @@
 	"funciones.h"
 	"usuario.h"
 	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
 
-1600728332 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.h
+1600822056 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.h
 
-1600728332 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\main.cpp
+1600804178 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\main.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -272,7 +275,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600744852 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
+1600821314 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -310,4 +313,23 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1600822607 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+
+1600822172 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.h
 
