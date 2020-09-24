@@ -37,7 +37,7 @@
 
 1598569139 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\estructura.h
 
-1600825693 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
+1600980650 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -55,8 +55,9 @@
 	"ui.h"
 	"rlutil.h"
 	"configuracion.h"
+	"reportes.h"
 
-1600822456 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.h
+1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\funciones.h
 
 1600822866 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\main.cpp
 	<iostream>
@@ -80,7 +81,7 @@
 
 1600531337 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\fecha.h
 
-1600818483 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
+1600982337 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -96,8 +97,10 @@
 	<iomanip>
 	"usuario.h"
 	"funciones.h"
+	"ui.h"
+	"rlutil.h"
 
-1600531337 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
+1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\usuario.h
 	"fecha.h"
 
 1600482222 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\fecha.cpp
@@ -153,7 +156,7 @@
 	"usuario.h"
 	"fecha.h"
 
-1600827707 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
+1600979543 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -168,8 +171,11 @@
 	<stdio.h>
 	<iomanip>
 	"entrenamiento.h"
+	"usuario.h"
+	"ui.h"
+	"rlutil.h"
 
-1600825774 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
+1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
@@ -341,7 +347,7 @@
 
 1600822172 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.h
 
-1600822456 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\configuracion.cpp
+1600979543 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\configuracion.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -358,7 +364,7 @@
 	"rlutil.h"
 	"configuracion.h"
 
-1600822456 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\configuracion.h
+1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\configuracion.h
 
 1600920498 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\configuracion.h
 
@@ -398,4 +404,24 @@
 	"reportes.h"
 
 1600832932 c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\reportes.h
+
+1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\reportes.h
+
+1600979543 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\reportes.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+	"reportes.h"
 

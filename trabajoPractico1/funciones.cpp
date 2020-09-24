@@ -56,7 +56,7 @@ if (t==72){ //TECLA ARRIBA
             }
             if (m==4 || m==5){ //Si le pasamos 4(Menu Reportes) o 5(Menu Configuracion) reduce las posiciones.
             aux=6;
-            }if (m==1){ //Si es 1, es menu principal
+            }if      (m==1){ //Si es 1, es menu principal
             aux=8;
             }
             break;
@@ -253,7 +253,7 @@ void menuUsuarios(){
     int pos=4;
     while(!volver){
             gotoxy(1,1);
-            cout << "           USUARIOS         "<< endl;
+            cout << "                    USUARIOS         "<< endl;
             cout << "-----------------------------------------------"<< endl;
             cout <<endl;
             gotoxy(1,4);

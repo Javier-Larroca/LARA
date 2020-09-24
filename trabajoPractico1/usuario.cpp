@@ -78,7 +78,7 @@ Usuario cargar_usuario(){ //Cargamos usuario
     valida_espacios(auxiliares);
     strcpy(aux->nombres,auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Apellidos: ";
-    cin.ignore();
+
     cin.getline(auxiliares, 50);
     valida_espacios(auxiliares);
     strcpy(aux->apellidos, auxiliares); //Uso el copy para volcar el nombre en el atributo
@@ -487,7 +487,7 @@ int validar_id(int p, int t){
 void valida_cadena(char *n){
 long int longitud;
 longitud=strlen(n);
-while (longitud>1 || (toupper(n[0]) != 'A' && toupper(n[0]) != 'B' && toupper(n[0]) != 'c')){
+while (longitud>1 || (toupper(n[0]) != 'A' && toupper(n[0]) != 'B' && toupper(n[0]) != 'C')){
     cout << "\nPerfil de actividad erróneo";
     cout << "\nPerfil de Actividad: ";
     cin>>n;
