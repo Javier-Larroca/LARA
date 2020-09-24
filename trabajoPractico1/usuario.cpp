@@ -313,11 +313,15 @@ bool modificar_usuario(){
             //msj("Participante guardado correctamente.", APP_FORECOLOR, APP_OKCOLOR);
             cout<<"¡Se guardaron todas las modificaciones correctamente!"<<endl;
             system("pause");
+            system("cls");
+            hidecursor();
             return true;
             }
             else{
             //msj("El participante no se guardó correctamente.", APP_FORECOLOR, APP_ERRORCOLOR);
             cout<<"¡No se pudo guardar las modificaciones!"<<endl<<endl;
+            system("cls");
+            hidecursor();
             return true;
             }
         }else{
