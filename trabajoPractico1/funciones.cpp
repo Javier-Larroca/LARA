@@ -16,6 +16,7 @@ using namespace std;
 #include "ui.h"
 #include "rlutil.h"
 #include "configuracion.h"
+#include "reportes.h"
 using namespace rlutil;
 
 //Menu principal
@@ -55,7 +56,7 @@ if (t==72){ //TECLA ARRIBA
             }
             if (m==4 || m==5){ //Si le pasamos 4(Menu Reportes) o 5(Menu Configuracion) reduce las posiciones.
             aux=6;
-            }else{
+            }if (m==1){ //Si es 1, es menu principal
             aux=8;
             }
             break;
@@ -103,7 +104,7 @@ if(t==80){ //TECLA ABAJO
     }
 }
 if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
-     if(m==1){ //Accede a las opciones del MENU PRINCIPAL
+    if (m==1){ //Accede a las opciones del MENU PRINCIPAL
      switch (aux){
         case 4:{
             menuUsuarios();//Accede al submenu de usuarios.
@@ -113,7 +114,7 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
             menuEntrenamiento();//Accede al submenu entrenamiento
         }
             break;
-        case 6:
+        case 6:menuReportes();
             break;
         case 7:menuConfiguracion();
             break;
@@ -167,7 +168,6 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
             case 4:{
                 Entrenamiento reg; ///Creo un registro
                 reg=cargar_entrenamiento();
-
                 if (guardar_entrenamiento(reg)){
                     cout<<"El entrenamiento se pudo guardar con exito"<<endl;
                 }
@@ -215,12 +215,24 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
                 break;
             }
     }
-    if (m==5){ //Accede a MENU CONFIGURACION
+    if (m==4){ //Accede a las opciones del MENU REPORTES
+        switch(aux){
+            case 4:reporteA();
+                break;
+            case 5:reporteB();
+                break;
+            case 6:*f=true;
+                    system("cls");
+                break;
+        }
+    }
+    if (m==5){ //Accede a las opciones del MENU CONFIGURACION
         switch (aux){
             case 4:generarBackUp();
                     system("cls");
                 break;
-            case 5:
+            case 5:restaurarBackUp();
+                    system("cls");
                 break;
             case 6:*f=true;
                     system("cls");
@@ -231,53 +243,6 @@ if (t==13){ //ENTER. Accede a las opciones de los diferentes menus
 *p=aux; //Despues de todo el recorrido del switch, le asigna el valor nuevo de la tecla al puntero p.
 }
 
-void validaTeclaSubMenu(char t, bool *f, int *p, int m){ //Valida tecla para las opciones de Configuracion y reportes ya que comparten 3 opciones.
-int aux=*p;
-    if (t==72){ //TECLA ARRIBA
-        switch(aux){
-            case 4:aux=6;
-                break;
-            case 5:aux=4;
-                break;
-            case 6:aux=5;
-                break;
-        }
-
-    }
-    if (t==80){ //TECLA ABAJO
-        switch(aux){
-            case 4:aux=5;
-                break;
-            case 5:aux=6;
-                break;
-            case 6:aux=4;
-                break;
-        }
-    }
-    if (t==13){ //ENTER
-      if(m==4){ //Reportes
-        switch(aux){
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:*f=true;
-                break;
-        }
-      }
-      if (m==5){ //Configuracion
-        switch(aux){
-            case 4:generarPin();             //Genera pin aleatorio
-                break;
-            case 5:             //Genera backup
-                break;
-            case 6:*f=true;
-                break;
-        }
-        }
-    }
-    *p=aux;
-}
 
 //Submenu Usuarios
 void menuUsuarios(){
@@ -354,4 +319,27 @@ void menuEntrenamiento(){
             tecla=getch();
             validaTecla(tecla, &volver, &pos, 3);
         }
+}
+
+//Submenu Reportes
+void menuReportes(){
+system("cls");
+bool volver=false;
+char tecla;
+const char *flecha="=>";
+int pos=4;
+    while(!volver){
+        gotoxy(1,1);
+        cout << "           REPORTES         "<< endl;
+        cout << "-----------------------------------------------"<< endl;
+        cout <<endl;
+        gotoxy(1,4);
+        cout <<"  1. Reporte A"<< endl;
+        cout <<"  2. Reporte B" << endl;
+        cout <<"  3. Volver al menú principal";
+        gotoxy(1,pos);
+        cout<< flecha;
+        tecla=getch();
+        validaTecla(tecla,&volver, &pos, 4);
+    }
 }

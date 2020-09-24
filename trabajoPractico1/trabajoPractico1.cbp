@@ -42,6 +42,8 @@
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="reportes.cpp" />
+		<Unit filename="reportes.h" />
 		<Unit filename="rlutil.h" />
 		<Unit filename="ui.cpp" />
 		<Unit filename="ui.h" />

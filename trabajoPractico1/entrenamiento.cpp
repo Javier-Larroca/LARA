@@ -13,6 +13,10 @@
 #include <iomanip>
 using namespace std;
 #include "entrenamiento.h"
+#include "usuario.h"
+#include "ui.h"
+#include "rlutil.h"
+using namespace rlutil;
 
 //Direccion donde vamos a guardar todos los entrenamientos
 const char *archivoEntrenamiento= "datos/entrenamiento.dat";
@@ -20,6 +24,7 @@ const char *archivoEntrenamiento= "datos/entrenamiento.dat";
 //Cargamos entrenamiento
 Entrenamiento cargar_entrenamiento(){
     system("cls");
+    showcursor();
     bool cancelarCarga=false;
     Usuario reg; //Creo un usuario de soporte para acceder a sus atributos
     char opcion[50]; //Tengo que usar asignación dinamica aca para validar entrada
@@ -51,7 +56,7 @@ Entrenamiento cargar_entrenamiento(){
         cout << " >Ingrese tiempo en minutos: ";
         cin >> aux->tiempo;
     }
-
+    hidecursor();
     return a;
 }
 
@@ -94,9 +99,9 @@ void listar_entrenamientos(){
         cout<<"No se puede leer el archivo de entrenamientos"<<endl;
         return;
     }
-    //encabezadoTablaUsuarios();
+    encabezadoTablaEntrenamiento();
     while (fread(&reg, sizeof (Entrenamiento), 1, f)){
-        mostrar_datos_entrenamiento(reg);
+        mostrarDatosTabla(reg);
     }
     fclose(f);
     system("pause");
@@ -280,6 +285,30 @@ bool guardar_entrenamiento(Entrenamiento reg, int pos) {
 	return bGrabo;
 }
 
+void encabezadoTablaEntrenamiento(){
+    cout << left;
+    cout << setw(14) << "ID" << "|";
+    cout << setw(14) << "ID Usuario" << "|";
+    cout << setw(20)  << "Actividad" << "|";
+    cout << setw(16) << "Calorias" << "|";
+    cout << setw(20) << "Fecha de entrenamieto" << "|";
+    cout << setw(10) << "Tiempo" << "|"<<endl;
+    cout << "-----------------------------------------------------------------------------------------------------" << endl;
+}
 
-
-
+void mostrarDatosTabla(Entrenamiento r){
+        cout << left;
+        cout << setw(14) << r.id << "|";
+        cout << setw(14) << r.idUsuario << "|";
+        cout << setw(20) << r.actividad << "|";
+        cout << setw(16) << r.calorias << "|";
+        cout << right;
+        cout << setfill('0');               //Esto es para que muestre un 0 en los dias del 1 al 9
+        cout << setw(2) <<r.fechaDeEntrenamiento.dia <<"/";
+        cout <<  setw(2) <<r.fechaDeEntrenamiento.mes << "/";
+        cout << left;
+        cout << setfill(' ');              //El setfill sigue de largo hasta encontrar un endl, por lo que lo lleno con espacios. Si genera problemas ponemos un if y listo.
+        cout << setw(15) <<r.fechaDeEntrenamiento.anio << "|";
+        cout << setw(10) << r.tiempo<< "|";
+        cout << endl;
+}

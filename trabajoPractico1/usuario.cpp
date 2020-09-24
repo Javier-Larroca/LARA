@@ -14,6 +14,9 @@
 using namespace std;
 #include "usuario.h"
 #include "funciones.h"
+#include "ui.h"
+#include "rlutil.h"
+using namespace rlutil;
 
 #define TECLA_ARRIBA 72
 #define TECLA_ABAJO 80
@@ -60,21 +63,23 @@ int buscar_usuario(int id_buscado){
 */
 Usuario cargar_usuario(){ //Cargamos usuario
     system("cls");
+    showcursor();
     bool cancelarCarga=false;
     Usuario a, *aux;
     aux = &a;
     char auxiliares[50]; //Creo esta cadena de forma auxiliar para validar espacios
-    int id, apto, tipoDeCarga=1; //Tipo de carga es para saber si estamos cargando un usuario o un entrenamiento.
+    int id,tipoDeCarga=1; //Tipo de carga es para saber si estamos cargando un usuario o un entrenamiento.
     cout << "ID   : ";
-    cin >> id;   ///Falta validacion de que el id no este repetido.
+    cin >> id;
     aux->id = validar_id(id, tipoDeCarga); //Creo que funciona bien.
     cout << "Nombres  : ";
     cin.ignore();
-    cin.getline(auxiliares, 50); ///Falta quitar espacios en nombre
+    cin.getline(auxiliares, 50);
     valida_espacios(auxiliares);
     strcpy(aux->nombres,auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Apellidos: ";
-    cin.getline(auxiliares, 50);   ///Falta quitar espacios en apellido
+    cin.ignore();
+    cin.getline(auxiliares, 50);
     valida_espacios(auxiliares);
     strcpy(aux->apellidos, auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Ingrese fecha de nacimiento " << endl;
@@ -83,35 +88,32 @@ Usuario cargar_usuario(){ //Cargamos usuario
         cout << "\nSe cancela carga de usuario por no cumplir con la edad minima...\n";
         return a;
     }
-    cout << "Fecha ingresada: "; ///Habria que ver la forma de cortar aca la carga del usuario si es menor de 13 años
+    cout << "Fecha ingresada: ";
     mostrar_fecha(aux->nac);
-    /*cout << "Fecha de nacimiento: "; //Lo dejo por las dudas, despues decidimos que funciones usar sino
-    cin >> aux->nac.dia;
-    cin >> aux->nac.mes;
-    cin >> aux->nac.anio;**/ ///Para mi esto esta okey.
-
     cout<< "Altura   : ";
-    cin >> aux->altura;
+    cin>>aux->altura;
+    while (aux->altura <= 0){
+        cout << "Ingrese una altura válida\n";
+        cout << "Altura: ";
+        cin>>aux->altura;
+        }
     cout << "Peso: ";
-    cin >> aux->peso;
-    cout << "Perfil actividad   : ";
-    cin >> aux->perfilActividad;
-    /// "toupper" convierte un caracter de minuscula a mayuscula.
-    while (toupper(aux->perfilActividad) != 'A' && toupper(aux->perfilActividad) != 'B' && toupper(aux->perfilActividad) != 'C'){
-        cout << endl <<  "> Perfil Actividad   : " ;
-        cin >> aux->perfilActividad;
-    }
+    cin>>aux->peso;
+    while (aux->peso <= 0){
+        cout << "Ingrese un peso válido\n";
+        cout << "Peso: ";
+        cin>>aux->peso;
+        }
+    cout << "\nIngrese un perfil de actividad 'A' 'B' o 'C'."<<endl;
+    cout<<"Perfil actividad   : ";
+    cin>>auxiliares;
+    valida_cadena(auxiliares);
+    aux->perfilActividad=auxiliares[0]; //Al ser validada previamente, toma el primer caracter de la cadena de validación
     cout << "Apto medico: ";
-    cin >> apto;
-    while (apto != 0 && apto != 1 ){
-        cout << endl <<  "> Apto medico  : " ;
-        cin >> apto;
-    }
-    aux->aptoMedico = apto;
-
+    cin >> auxiliares;
+    aux->aptoMedico=valida_apto_medico(auxiliares);
     aux->estado = true;
-    //guardar_usuario(a); // Termina de cargar el usuario y valida que se guarde.Creo que es un buen lugar para poner el mensaje, decime que te parece despues.
-    ///Esto lo saque de aca, y lo mande directo para el menu, en funciones.cpp
+    hidecursor();
     return a;
 }
 
@@ -277,8 +279,7 @@ int cantidadUsuarios(){
 
 bool modificar_usuario(){
     system("cls");
-    //title("MODIFICAR PARTICIPANTE");
-    //gotoxy(1, 5);
+    showcursor();
     int id, pos, opcion;
     char opc[10];
     bool modifico=false, volver=false;
@@ -330,12 +331,13 @@ bool modificar_usuario(){
         system("pause");
         return false;
     }
+    hidecursor();
     system("cls");
 }
 
 //Modifico atributo
 bool modificar_atributo(int o, Usuario *r, bool *m){
-    char aux[10]; //Cadena char para validar la opcion que ingresa. Uso puntero para capturar si tiene espacios
+    char aux[15]; //Cadena char para validar la opcion que ingresa. Uso puntero para capturar si tiene espacios
     long int valor=0;// Le asigno 0 ya que despues le paso el valor de aux
     switch (o){
     case 1: //Modificacion de peso. Sin validacion de entrada.
@@ -350,40 +352,31 @@ bool modificar_atributo(int o, Usuario *r, bool *m){
         cout << "\nPeso modificado\n";
         *m=true;
         system("pause");
-        cin.ignore(); //Limpio buffer1
+        cin.ignore();
+        return false;//Limpio buffer
         break;
     case 2: //Modificacion perfil de actividad. Valida que no se ingresen otras letras
         cout << "\nIngrese nuevo perfil de actividad para " << r->nombres << " " << r->apellidos << endl;
         cout << "Perfil actividad: ";
-        cin.getline(aux, 10);
-        valor = strlen(aux); //Obtengo longitud de la cadena para validar que no ingresen muchos caracteres
-        while ((toupper(aux[0]) != 'A' && toupper(aux[0]) != 'B' && toupper(aux[0]) != 'C') || valor >1){ //Ciclo donde validamos los datos de entrada
-        cout << "\nSolo se admiten perfiles A | B | C\n";
-        cout <<  "Perfil Actividad: " ;
-        cin.getline(aux, 50);
-        valor = strlen(aux);
-        }
+        cin>>aux;
+        valida_cadena(aux);
         r->perfilActividad = aux[0];
         cout << "\nPerfil modificado\n";
         *m=true;
         system("pause");
+         cin.ignore();
         return false;
         break;
     case 3: //Validacion apto medico. Valida que no se ingrese otros caracteres
         cout << "\nIngrese nuevo apto medico para " << r->nombres << " " << r->apellidos << endl;
         cout << "Apto medico: ";
-        cin.getline(aux, 10);
-        valor = strtol(aux, NULL, 36); //Esta funcion me permite obtener un numero especifico de codigo ASCII para validar letras.
-        while (valor != 1 && valor != 0){
-        cout << "Solo se permiten los siguientes valores: 1 | 0\n";
-        cout << "Apto medico: ";
-        cin.getline(aux, 10);
-        valor = strtol (aux, NULL, 36);
-        }
-        r->aptoMedico = valor;
+        cin>>aux;
+        r->aptoMedico = valida_apto_medico(aux);
         cout << "\nApto medico modificado\n";
         *m=true;
         system("pause");
+        cin.ignore();
+        return false;
         break;
     case 4: //Opción para cancelar modificacion
         return true;
@@ -449,9 +442,10 @@ longitud = strlen(opc);
 void valida_espacios(char *n){
 long int longitud;
 longitud=strlen(n);
-while (n[0] == ' ' || n[longitud-1] == ' '){
-    cout << "Ingrese valores válidos, no estan permitido espacios al inicio o al final\n";
+while (n[0] == ' ' || n[longitud-1] == ' ' || longitud==0){
+    cout << "Ingrese valores válidos, no estan permitidos campos vacíos, espacios al inicio o al final\n";
     cout << "Nombre: ";
+    cin.ignore();
     cin.getline(n, 50);
     longitud=strlen(n);
 }
@@ -484,4 +478,27 @@ int validar_id(int p, int t){
         }
     }
     return p;
+}
+
+void valida_cadena(char *n){
+long int longitud;
+longitud=strlen(n);
+while (longitud>1 || (toupper(n[0]) != 'A' && toupper(n[0]) != 'B' && toupper(n[0]) != 'c')){
+    cout << "\nPerfil de actividad erróneo";
+    cout << "\nPerfil de Actividad: ";
+    cin>>n;
+    longitud=strlen(n);
+}
+
+}
+
+int valida_apto_medico(char *n){
+int valor = strtol(n, NULL, 36); //Esta funcion me permite obtener un numero especifico de codigo ASCII para validar letras ya que ATOI me devuelve 0 si son letras
+        while (valor != 1 && valor != 0){
+        cout << "Solo se permiten los siguientes valores: 1 | 0\n";
+        cout << "Apto medico: ";
+        cin>>n;
+        valor = strtol (n, NULL, 36);
+        }
+    return valor;
 }

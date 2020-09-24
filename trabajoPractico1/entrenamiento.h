@@ -14,6 +14,7 @@ struct Entrenamiento {
     int tiempo;
 };
 
+
 //Funciones para entrenamiento
 Entrenamiento cargar_entrenamiento();//Carga un nuevo Entrenamiento
 int validar_actividad(char *o, int a);//Valida actividad
@@ -28,4 +29,6 @@ void listar_entranamiento_x_usuario();
 int buscar_entrenamiento_x_usuario(int);
 bool guardar_entrenamiento(Entrenamiento, int);
 void modificar_entrenamiento_x_id();
+void encabezadoTablaEntrenamiento(); //Encabezado para tabla de entrenamientos
+void mostrarDatosTabla(Entrenamiento r);
 #endif // ENTRENAMIENTO_H_INCLUDED
