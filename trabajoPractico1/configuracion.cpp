@@ -306,6 +306,7 @@ free(bkpEntrenamiento); //Libero los vectores
 bool guardoArchivoUsuario(Usuario *u, int c){
     Usuario reg; //Usuario donde guardamos los usuarios que leemos
     FILE *f;
+    FILE *bkp; //Archivo de backup
     f=fopen("datos/usuarios.dat", "rb");
     int registrosGuardados=0; //Creo esta variable a modo de bandera
     if (f == NULL){
@@ -313,9 +314,9 @@ bool guardoArchivoUsuario(Usuario *u, int c){
         cout<<"\nNo se puedo abrir archivo original de Usuarios\n";
         system("pause");
         return false;
-    }
-        while (fread(&reg, sizeof (Usuario), 1, f)){
-            FILE *bkp; //Archivo de backup
+    }       bkp= fopen(usuarioBackup, "wb");
+            fclose(bkp);
+            while (fread(&reg, sizeof (Usuario), 1, f)){
             bkp = fopen(usuarioBackup, "ab"); //Le paso el const char que almacena la direccion donde lo guardamos.
             if (bkp == NULL){
             system("cls");
@@ -337,6 +338,7 @@ bool guardoArchivoEntrenamiento(Entrenamiento *e, int c){
 Entrenamiento reg; //Usuario donde guardamos los entrenamientos que leemos
 FILE *f;
 f=fopen("datos/entrenamiento.dat", "rb");
+FILE *bkp; //Archivo de backup
 int registrosGuardados=0; //Creo esta variable a modo de bandera
     if (f == NULL){
         system("cls");
@@ -344,15 +346,16 @@ int registrosGuardados=0; //Creo esta variable a modo de bandera
         system("pause");
         return false;
     }
+        bkp= fopen(entrenamientoBackup, "wb");
+        fclose(bkp);
         while (fread(&reg, sizeof (Entrenamiento), 1, f)){
-            FILE *bkp; //Archivo de backup
             bkp = fopen(entrenamientoBackup, "ab"); //Le paso el const char que almacena la direccion donde lo guardamos.
             if (bkp == NULL){
             system("cls");
             cout<<"\nNo se pudo abrir archivo de backup de Entrenamiento\n";
             return false;
             }
-            fwrite(&reg, sizeof(Usuario), 1, bkp);
+            fwrite(&reg, sizeof(Entrenamiento), 1, bkp);
             registrosGuardados++;
             fclose(bkp);
         }
@@ -373,6 +376,7 @@ f=fopen(usuarioBackup, "rb"); //Abro archivo de backup
         return false;
     }
     original=fopen("datos/usuarios.dat", "wb"); //Seteo a 0 la información en usuarios.dat
+    fclose(original);
         while (fread(&reg, sizeof (Usuario), 1, f)){
             original = fopen("datos/usuarios.dat", "ab"); //Le paso el const char que almacena la direccion donde lo guardamos.
             if (original == NULL){
@@ -403,6 +407,7 @@ f=fopen(entrenamientoBackup, "rb"); //Abro archivo de backup
         return false;
     }
     original=fopen("datos/entrenamiento.dat", "wb"); //Seteo a 0 la información en usuarios.dat
+    fclose(original);
         while (fread(&reg, sizeof (Entrenamiento), 1, f)){
             original = fopen("datos/entrenamiento.dat", "ab"); //Le paso el const char que almacena la direccion donde lo guardamos.
             if (original == NULL){

@@ -78,7 +78,6 @@ Usuario cargar_usuario(){ //Cargamos usuario
     valida_espacios(auxiliares);
     strcpy(aux->nombres,auxiliares); //Uso el copy para volcar el nombre en el atributo
     cout << "Apellidos: ";
-
     cin.getline(auxiliares, 50);
     valida_espacios(auxiliares);
     strcpy(aux->apellidos, auxiliares); //Uso el copy para volcar el nombre en el atributo
@@ -447,8 +446,13 @@ void valida_espacios(char *n){
 long int longitud;
 longitud=strlen(n);
 while (n[0] == ' ' || n[longitud-1] == ' ' || longitud==0){
+<<<<<<< Updated upstream
     cout << "Ingrese valores válidos, no estan permitidos campos vacíos, espacios al inicio o al final\n";
     cout << "Ingrese el valor nuevamente: ";
+=======
+    cout << "\nNo estan permitidos campos vacíos, espacios al inicio o al final\n";
+    cout << "Ingrese valores válidos: ";
+>>>>>>> Stashed changes
     cin.getline(n, 50);
     longitud=strlen(n);
 }

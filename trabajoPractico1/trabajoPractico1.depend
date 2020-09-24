@@ -201,7 +201,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600821314 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
+1600931244 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -216,12 +216,15 @@
 	<stdio.h>
 	<iomanip>
 	"entrenamiento.h"
+	"usuario.h"
+	"ui.h"
+	"rlutil.h"
 
-1600821314 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
+1600930871 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\entrenamiento.h
 	"usuario.h"
 	"fecha.h"
 
-1600479239 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.h
+1600926989 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.h
 	"fecha.h"
 
 1600482306 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\fecha.h
@@ -232,7 +235,7 @@
 	"usuario.h"
 	<ctime>
 
-1600822730 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
+1600984054 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -250,10 +253,11 @@
 	"ui.h"
 	"rlutil.h"
 	"configuracion.h"
+	"reportes.h"
 
-1600822056 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.h
+1600870064 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\funciones.h
 
-1600804178 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\main.cpp
+1600987168 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\main.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -289,7 +293,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600821314 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
+1600987168 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\usuario.cpp
 	<iostream>
 	<iostream>
 	<stdlib.h>
@@ -305,6 +309,8 @@
 	<iomanip>
 	"usuario.h"
 	"funciones.h"
+	"ui.h"
+	"rlutil.h"
 
 1600728332 source:c:\users\evasquez\desktop\elmer - privado\utn\laboratorio de computación ii\trabajopractico1\ui.cpp
 	<iostream>
@@ -328,7 +334,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600822607 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.cpp
+1600987168 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
@@ -345,7 +351,7 @@
 	"rlutil.h"
 	"configuracion.h"
 
-1600822172 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.h
+1600920498 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\configuracion.h
 
 1600979543 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\configuracion.cpp
 	<iostream>
@@ -408,6 +414,176 @@
 1600979543 c:\users\javie\desktop\lara\tp-lara\trabajopractico1\reportes.h
 
 1600979543 source:c:\users\javie\desktop\lara\tp-lara\trabajopractico1\reportes.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+	"reportes.h"
+
+1600986503 source:c:\users\evasquez\desktop\trabajopractico1\configuracion.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+
+1600870064 c:\users\evasquez\desktop\trabajopractico1\funciones.h
+
+1600926989 c:\users\evasquez\desktop\trabajopractico1\usuario.h
+	"fecha.h"
+
+1600482306 c:\users\evasquez\desktop\trabajopractico1\fecha.h
+
+1600930871 c:\users\evasquez\desktop\trabajopractico1\entrenamiento.h
+	"usuario.h"
+	"fecha.h"
+
+1600728332 c:\users\evasquez\desktop\trabajopractico1\ui.h
+
+1600534705 c:\users\evasquez\desktop\trabajopractico1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1600920498 c:\users\evasquez\desktop\trabajopractico1\configuracion.h
+
+1600931244 source:c:\users\evasquez\desktop\trabajopractico1\entrenamiento.cpp
+	<iostream>
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"entrenamiento.h"
+	"usuario.h"
+	"ui.h"
+	"rlutil.h"
+
+1600482222 source:c:\users\evasquez\desktop\trabajopractico1\fecha.cpp
+	<iostream>
+	"fecha.h"
+	"usuario.h"
+	<ctime>
+
+1600984054 source:c:\users\evasquez\desktop\trabajopractico1\funciones.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+	"reportes.h"
+
+1600832932 c:\users\evasquez\desktop\trabajopractico1\reportes.h
+
+1600829307 source:c:\users\evasquez\desktop\trabajopractico1\main.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+
+1600832932 source:c:\users\evasquez\desktop\trabajopractico1\reportes.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	"funciones.h"
+	"usuario.h"
+	"entrenamiento.h"
+	"ui.h"
+	"rlutil.h"
+	"configuracion.h"
+	"reportes.h"
+
+1600728332 source:c:\users\evasquez\desktop\trabajopractico1\ui.cpp
+	<iostream>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1600985940 source:c:\users\evasquez\desktop\trabajopractico1\usuario.cpp
+	<iostream>
+	<iostream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<cstdio>
+	<cstring>
+	<ctime>
+	<string.h>
+	<string>
+	<windows.h>
+	<stdio.h>
+	<iomanip>
+	"usuario.h"
+	"funciones.h"
+	"ui.h"
+	"rlutil.h"
+
+1600832932 c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\reportes.h
+
+1600832932 source:c:\users\evasquez\desktop\git\lab ii - tp1\tp-lara\trabajopractico1\reportes.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdlib>
