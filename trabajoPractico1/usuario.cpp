@@ -448,8 +448,7 @@ long int longitud;
 longitud=strlen(n);
 while (n[0] == ' ' || n[longitud-1] == ' ' || longitud==0){
     cout << "Ingrese valores válidos, no estan permitidos campos vacíos, espacios al inicio o al final\n";
-    cout << "Nombre: ";
-    cin.ignore();
+    cout << "Ingrese el valor nuevamente: ";
     cin.getline(n, 50);
     longitud=strlen(n);
 }

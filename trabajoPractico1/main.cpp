@@ -11,16 +11,28 @@
 #include <stdio.h>
 #include "funciones.h"
 using namespace std;
-//#include "ui.h"
-//#include "rlutil.h"
-//using namespace rlutil;
 
 int main(){
     setlocale(LC_ALL, "Spanish");
     system("color 70");
     SetConsoleTitle("   -    LARA   -   ");
-    //initUI();
-    //title("", APP_TITLEFORECOLOR, APP_TITLEBACKCOLOR);
+
+    cout<<endl;
+    cout<<"....##..........###....########.....###......"<<endl;
+    cout<<"....##.........##.##...##.....##...##.##....."<<endl;
+    cout<<"....##........##...##..##.....##..##...##...."<<endl;
+    cout<<"....##.......##.....##.########..##.....##..."<<endl;
+    cout<<"....##.......#########.##...##...#########..."<<endl;
+    cout<<"....##.......##.....##.##....##..##.....##..."<<endl;
+    cout<<"....########.##.....##.##.....##.##.....##..."<<endl;
+
+    cout<<endl<<"      Laboratorio de computacion II"<<endl<<endl<<endl;
+    cout<<"    Integrandes:"<<endl;
+    cout<<"              -Larroca Javier Agustin"<<endl;
+    cout<<"              -Vasquez Elmer "<<endl<<endl<<endl<<endl;
+
+    system("pause");
+    system("cls");
     menuPrincipal();
     return 0;
 }
