@@ -332,6 +332,8 @@ bool modificar_usuario(){
         //msj("No existe el participante", 15, 3);
         cout<<"Usuario inexistente"<<endl<<endl;
         system("pause");
+        system("cls");
+        hidecursor();
         return false;
     }
     hidecursor();
@@ -407,6 +409,12 @@ cout << "ID: ";
 cin >> id;
 cin.ignore();
 system("cls");
+if (buscarUsuario(id)== -1){
+cout<<"USUARIO INEXISTENTE\n";
+system("pause");
+system("cls");
+return;
+}
 cout << "USUARIO A ELIMINAR: \n";
 cout <<endl;
 mostrar_usuario(reg=leer_usuario(buscarUsuario(id)));
@@ -446,13 +454,8 @@ void valida_espacios(char *n){
 long int longitud;
 longitud=strlen(n);
 while (n[0] == ' ' || n[longitud-1] == ' ' || longitud==0){
-<<<<<<< Updated upstream
-    cout << "Ingrese valores válidos, no estan permitidos campos vacíos, espacios al inicio o al final\n";
-    cout << "Ingrese el valor nuevamente: ";
-=======
     cout << "\nNo estan permitidos campos vacíos, espacios al inicio o al final\n";
     cout << "Ingrese valores válidos: ";
->>>>>>> Stashed changes
     cin.getline(n, 50);
     longitud=strlen(n);
 }

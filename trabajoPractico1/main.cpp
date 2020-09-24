@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include "funciones.h"
 using namespace std;
+//#include "ui.h"
+//#include "rlutil.h"
+//using namespace rlutil;
 
 int main(){
     setlocale(LC_ALL, "Spanish");
